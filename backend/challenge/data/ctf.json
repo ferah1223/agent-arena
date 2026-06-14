@@ -1,0 +1,211 @@
+[
+  {
+    "id": "ctf-easy-001",
+    "mode": "ctf",
+    "difficulty": "easy",
+    "title": "Hidden in Plain Sight",
+    "description": "Find a hidden flag in an HTML page's source code.",
+    "content": "A web page at http://challenge.local/hidden displays a simple welcome message. The developer left sensitive information somewhere in the page. Examine the HTML source code, JavaScript comments, CSS files, and any linked resources to find the hidden flag.\n\nHint: Check HTML comments, hidden form fields, JavaScript variables, and CSS file comments. The flag format is FLAG{...}.",
+    "time_limit": 600,
+    "judge_criteria": ["flag_correctness", "methodology", "tool_usage", "documentation"],
+    "flag_hash": "sha256:a1b2c3d4e5f6_hidden_comment_flag"
+  },
+  {
+    "id": "ctf-easy-002",
+    "mode": "ctf",
+    "difficulty": "easy",
+    "title": "Cookie Monster",
+    "description": "Manipulate browser cookies to gain unauthorized access.",
+    "content": "A web application has a login page at http://challenge.local/login. After logging in as a regular user, examine the session cookies. The application stores the user role in a cookie. Modify the cookie to escalate privileges to admin and access the admin panel to retrieve the flag.\n\nSteps:\n1. Log in with test credentials (user: test, pass: test)\n2. Examine cookies using browser dev tools\n3. Identify the role/privilege cookie\n4. Modify it to 'admin'\n5. Access /admin to get the flag",
+    "time_limit": 600,
+    "judge_criteria": ["flag_correctness", "cookie_understanding", "privilege_escalation_method", "documentation"],
+    "flag_hash": "sha256:b2c3d4e5f6g7_cookie_admin_flag"
+  },
+  {
+    "id": "ctf-easy-003",
+    "mode": "ctf",
+    "difficulty": "easy",
+    "title": "Base Encoding Challenge",
+    "description": "Decode a message encoded with multiple base encodings.",
+    "content": "You intercepted an encoded message: 'WkdWbVpYTjBRR1Z5YzJWamRYTmxjbTVoYldVQ1FtRjBhVzl1TUc=\n\nThis message has been encoded multiple times with different base encodings. Decode each layer to reveal the original flag. Identify each encoding layer and apply the correct decoding in reverse order.\n\nHint: Common encodings include Base64, Base32, Base16 (hex), Base85. The final result should contain the flag in FLAG{...} format.",
+    "time_limit": 600,
+    "judge_criteria": ["flag_correctness", "encoding_identification", "methodology", "documentation"],
+    "flag_hash": "sha256:c3d4e5f6g7h8_base_decode_flag"
+  },
+  {
+    "id": "ctf-easy-004",
+    "mode": "ctf",
+    "difficulty": "easy",
+    "title": "Directory Traversal Basics",
+    "description": "Access restricted files using path traversal.",
+    "content": "A web application serves files from http://challenge.local/files?name=readme.txt. The application is vulnerable to directory traversal. Use path traversal techniques to read the contents of /etc/passwd on the server, then find and read a file containing the flag.\n\nHint: Try using ../ sequences to navigate outside the web root. Pay attention to any filtering or WAF rules that might be in place. URL encoding might help bypass filters.",
+    "time_limit": 600,
+    "judge_criteria": ["flag_correctness", "traversal_technique", "filter_bypass", "documentation"],
+    "flag_hash": "sha256:d4e5f6g7h8i9_traversal_flag"
+  },
+  {
+    "id": "ctf-easy-005",
+    "mode": "ctf",
+    "difficulty": "easy",
+    "title": "Simple SQL Injection",
+    "description": "Exploit a basic SQL injection vulnerability in a login form.",
+    "content": "A login form at http://challenge.local/login is vulnerable to SQL injection. The query appears to be:\n```sql\nSELECT * FROM users WHERE username='$user' AND password='$pass'\n```\n\nUse SQL injection to bypass authentication and log in as admin without knowing the password. Then retrieve the flag from the admin dashboard.\n\nHint: Think about how to manipulate the WHERE clause to always return true. Consider comment characters (-- , #, /*) to ignore the password check.",
+    "time_limit": 600,
+    "judge_criteria": ["flag_correctness", "injection_technique", "understanding_of_sql", "documentation"],
+    "flag_hash": "sha256:e5f6g7h8i9j0_sqli_basic_flag"
+  },
+  {
+    "id": "ctf-easy-006",
+    "mode": "ctf",
+    "difficulty": "easy",
+    "title": "Steganography: Image Secrets",
+    "description": "Extract hidden data from an image file.",
+    "content": "You've been given an image file (challenge.png) that contains a hidden message. Use steganography tools to extract the concealed flag.\n\nApproaches to try:\n1. Use `strings` command to find readable text in the file\n2. Check for appended data after the image's end marker\n3. Use steghide or zsteg to extract embedded data\n4. Check EXIF metadata\n5. Try LSB (Least Significant Bit) extraction\n6. Check if multiple images are layered\n\nThe flag is in FLAG{...} format.",
+    "time_limit": 600,
+    "judge_criteria": ["flag_correctness", "tool_usage", "technique_variety", "documentation"],
+    "flag_hash": "sha256:f6g7h8i9j0k1_stego_image_flag"
+  },
+  {
+    "id": "ctf-easy-007",
+    "mode": "ctf",
+    "difficulty": "easy",
+    "title": "Caesar Cipher Cracking",
+    "description": "Decrypt a message encrypted with a Caesar cipher variant.",
+    "content": "You intercepted an encrypted message:\n\n'KHOOR ZRUOG WKLV LV D FDHVDU FLSKHU FKDOOHQJH'\n\nThis message was encrypted using a Caesar cipher (shift cipher). Your task is:\n1. Identify the shift value used\n2. Decrypt the message\n3. The decrypted message contains instructions for finding the flag\n4. Follow those instructions to retrieve the actual flag\n\nBonus: Also try ROT13, ROT47, and Vigenère cipher if the simple shift doesn't work cleanly.",
+    "time_limit": 600,
+    "judge_criteria": ["flag_correctness", "cryptanalysis_skill", "tool_usage", "documentation"],
+    "flag_hash": "sha256:g7h8i9j0k1l2_caesar_flag"
+  },
+  {
+    "id": "ctf-medium-001",
+    "mode": "ctf",
+    "difficulty": "medium",
+    "title": "Blind SQL Injection",
+    "description": "Extract data from a database using blind SQL injection techniques.",
+    "content": "A search feature at http://challenge.local/search?q=test is vulnerable to blind SQL injection. The page returns 'Found' or 'Not Found' but doesn't display query results directly.\n\nYour task:\n1. Confirm the vulnerability using boolean-based blind injection\n2. Determine the database name\n3. Enumerate table names\n4. Extract the admin password from the users table character by character\n5. Log in as admin and retrieve the flag\n\nUse time-based or boolean-based techniques. Write a script to automate the extraction.",
+    "time_limit": 900,
+    "judge_criteria": ["flag_correctness", "automation_script", "technique_sophistication", "efficiency", "documentation"],
+    "flag_hash": "sha256:h8i9j0k1l2m3_blind_sqli_flag"
+  },
+  {
+    "id": "ctf-medium-002",
+    "mode": "ctf",
+    "difficulty": "medium",
+    "title": "Cross-Site Scripting (XSS) Chain",
+    "description": "Exploit stored XSS to steal admin session cookies.",
+    "content": "A web application at http://challenge.local has a comment section that doesn't properly sanitize input. Your goal:\n\n1. Identify the XSS vulnerability (reflected or stored)\n2. Craft a payload that executes JavaScript in the victim's browser\n3. The admin bot visits comments every 30 seconds\n4. Create a payload that exfiltrates the admin's cookies to your server\n5. Use the stolen session to access /admin/flag\n\nConstraints:\n- CSP header present: script-src 'self' 'unsafe-inline'\n- Input length limit: 500 characters\n- HTML tag filtering in place (bypass it)\n\nYou have access to a webhook endpoint for receiving exfiltrated data.",
+    "time_limit": 900,
+    "judge_criteria": ["flag_correctness", "xss_technique", "csp_bypass", "payload_crafting", "documentation"],
+    "flag_hash": "sha256:i9j0k1l2m3n4_xss_chain_flag"
+  },
+  {
+    "id": "ctf-medium-003",
+    "mode": "ctf",
+    "difficulty": "medium",
+    "title": "JWT Token Forgery",
+    "description": "Forge a JWT token to escalate privileges.",
+    "content": "A web application uses JWT tokens for authentication. You have a valid token for a regular user:\n\n```\neyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiZ3Vlc3QiLCJyb2xlIjoiYmFzaWMiLCJpYXQiOjE2OTAwMDAwMDB9.signature\n```\n\nYour task:\n1. Decode and analyze the JWT token\n2. Identify the vulnerability (weak secret, algorithm confusion, or none algorithm)\n3. Forge a token with role='admin'\n4. Use the forged token to access /api/admin/flag\n\nTry multiple attack vectors:\n- Algorithm none attack\n- Weak HMAC secret cracking\n- RSA to HMAC confusion\n- Key injection via JKU/JWK headers",
+    "time_limit": 900,
+    "judge_criteria": ["flag_correctness", "jwt_knowledge", "attack_vector_diversity", "tool_usage", "documentation"],
+    "flag_hash": "sha256:j0k1l2m3n4o5_jwt_forge_flag"
+  },
+  {
+    "id": "ctf-medium-004",
+    "mode": "ctf",
+    "difficulty": "medium",
+    "title": "Server-Side Request Forgery (SSRF)",
+    "description": "Exploit SSRF to access internal services and extract secrets.",
+    "content": "A web application at http://challenge.local/fetch?url= allows users to fetch URLs for preview. The server is in a cloud environment with an IMDS (Instance Metadata Service).\n\nYour task:\n1. Confirm SSRF by fetching http://localhost or http://127.0.0.1\n2. Discover internal services running on different ports\n3. Access the cloud metadata service (http://169.254.169.254/latest/meta-data/)\n4. Find and extract AWS credentials or internal API keys\n5. Use discovered credentials to access an internal S3 bucket containing the flag\n\nBypass potential protections:\n- URL allowlisting\n- IP blacklisting\n- DNS rebinding\n- Redirect-based bypass",
+    "time_limit": 900,
+    "judge_criteria": ["flag_correctness", "ssrf_technique", "bypass_creativity", "cloud_knowledge", "documentation"],
+    "flag_hash": "sha256:k1l2m3n4o5p6_ssrf_flag"
+  },
+  {
+    "id": "ctf-medium-005",
+    "mode": "ctf",
+    "difficulty": "medium",
+    "title": "Command Injection with Filters",
+    "description": "Bypass input filters to achieve remote code execution.",
+    "content": "A web application at http://challenge.local/ping allows users to ping an IP address. The input is passed to a shell command but several characters are filtered.\n\nFiltered characters: ; | & ` $\nAllowed input: alphanumeric, dots, spaces, forward slash\n\nYour task:\n1. Identify the filtering mechanism\n2. Find a bypass to execute arbitrary commands\n3. Read the contents of /flag.txt\n4. Try alternative approaches:\n   - Newline injection (%0a)\n   - Variable expansion bypass\n   - Wildcard globbing\n   - Hex/octal encoding\n   - Using $(()) arithmetic\n\nDocument each bypass technique you try.",
+    "time_limit": 900,
+    "judge_criteria": ["flag_correctness", "bypass_creativity", "filter_understanding", "multiple_techniques", "documentation"],
+    "flag_hash": "sha256:l2m3n4o5p6q7_cmdi_filter_flag"
+  },
+  {
+    "id": "ctf-medium-006",
+    "mode": "ctf",
+    "difficulty": "medium",
+    "title": "Race Condition Exploitation",
+    "description": "Exploit a TOCTOU race condition in a file upload feature.",
+    "content": "A web application allows file uploads with the following security measures:\n1. File extension whitelist (.jpg, .png, .gif)\n2. Content-type validation\n3. Server-side antivirus scan\n4. File is saved, then validated, and deleted if invalid\n\nThe vulnerability: there's a time gap between file save and validation. Your task:\n1. Upload a PHP webshell with a valid extension initially\n2. Race to access the file before it's deleted\n3. Write a script that automates the race condition\n4. Achieve RCE and read /flag.txt\n\nBonus: Implement a multi-threaded approach for reliable exploitation.",
+    "time_limit": 900,
+    "judge_criteria": ["flag_correctness", "race_condition_exploit", "automation_script", "reliability", "documentation"],
+    "flag_hash": "sha256:m3n4o5p6q7r8_race_condition_flag"
+  },
+  {
+    "id": "ctf-hard-001",
+    "mode": "ctf",
+    "difficulty": "hard",
+    "title": "Deserialization Attack Chain",
+    "description": "Exploit insecure deserialization to achieve RCE via a gadget chain.",
+    "content": "A Java application uses Java's native serialization for session management. The application has the following libraries on the classpath:\n- Apache Commons Collections 3.2.1\n- Spring Framework 4.3.0\n- Groovy 2.4.3\n\nYour task:\n1. Identify the deserialization endpoint (look for base64-encoded data in cookies/headers)\n2. Craft a ysoserial gadget chain using Commons Collections\n3. Construct a payload that executes 'cat /flag.txt'\n4. Handle the serialization format correctly\n5. Deliver the payload and extract the flag\n\nAlso demonstrate:\n- How to detect deserialization vulnerabilities\n- Alternative gadget chains using different libraries\n- A defensive recommendation for fixing the vulnerability",
+    "time_limit": 1200,
+    "judge_criteria": ["flag_correctness", "gadget_chain_knowledge", "payload_construction", "defense_recommendations", "documentation"],
+    "flag_hash": "sha256:n4o5p6q7r8s9_deser_chain_flag"
+  },
+  {
+    "id": "ctf-hard-002",
+    "mode": "ctf",
+    "difficulty": "hard",
+    "title": "DNS Exfiltration and C2",
+    "description": "Build and detect a DNS-based data exfiltration channel.",
+    "content": "An attacker has established a DNS-based covert channel to exfiltrate data from a compromised network. Your task has two parts:\n\n**Part 1 - Attacker Perspective**:\n1. Design a DNS exfiltration protocol that encodes data in subdomain labels\n2. Implement a Python script that encodes a file as DNS queries\n3. Build a DNS server that receives and decodes the exfiltrated data\n4. Handle chunking, encoding, and reassembly\n\n**Part 2 - Defender Perspective**:\n1. Given DNS query logs, identify the exfiltration activity\n2. Decode the exfiltrated data from the logs\n3. Write detection rules (Suricata/Snort) for DNS tunneling\n4. Propose network-level mitigations\n\nThe flag is hidden in the exfiltrated data.",
+    "time_limit": 1200,
+    "judge_criteria": ["flag_correctness", "protocol_design", "implementation_quality", "detection_rules", "defensive_measures", "documentation"],
+    "flag_hash": "sha256:o5p6q7r8s9t0_dns_exfil_flag"
+  },
+  {
+    "id": "ctf-hard-003",
+    "mode": "ctf",
+    "difficulty": "hard",
+    "title": "Prototype Pollution to RCE",
+    "description": "Exploit prototype pollution in a Node.js application to achieve RCE.",
+    "content": "A Node.js application (Express + EJS templating) is vulnerable to prototype pollution through an unprotected JSON merge function. Your task:\n\n1. Identify the pollution sink in the application code\n2. Pollute Object.prototype with a malicious payload\n3. Leverage EJS template options pollution to achieve RCE\n4. The specific gadget: polluting `outputFunctionName` or `client` in EJS options\n5. Execute a reverse shell or read /flag.txt\n\nAnalyze:\n- The __proto__ vs constructor.prototype distinction\n- Why JSON.parse is safe but custom merge is not\n- Browser vs Node.js prototype pollution differences\n- Construct a detection payload first, then weaponize it",
+    "time_limit": 1200,
+    "judge_criteria": ["flag_correctness", "pollution_mechanism", "gadget_chain_construction", "rce_achievement", "analysis_depth", "documentation"],
+    "flag_hash": "sha256:p6q7r8s9t0u1_proto_poll_flag"
+  },
+  {
+    "id": "ctf-expert-001",
+    "mode": "ctf",
+    "difficulty": "expert",
+    "title": "Custom Vulnerable Web Application",
+    "description": "Full penetration test of a custom web application with multiple chained vulnerabilities.",
+    "content": "You are given access to a custom web application (source code + running instance). The application is a document management system with:\n- User authentication (custom implementation)\n- Document upload and processing\n- Admin panel with user management\n- API with GraphQL endpoint\n- WebSocket-based notifications\n\n**Your mission**: Achieve full system compromise by chaining vulnerabilities.\n\nPossible attack vectors:\n1. Authentication bypass via timing attack on password comparison\n2. Insecure direct object reference (IDOR) in document access\n3. GraphQL introspection leaking schema, then injection\n4. File upload leading to stored XSS, pivoting to admin session hijack\n5. Admin functionality abuse for arbitrary file write\n6. Local file inclusion using path traversal + null byte\n7. Privilege escalation via insecure deserialization in admin features\n8. Final goal: RCE and flag extraction from /root/flag.txt\n\n**Deliverables**:\n1. Full exploitation chain with proof of each step\n2. Working exploit script(s)\n3. Risk assessment for each vulnerability (CVSS scoring)\n4. Remediation recommendations for each finding\n5. Executive summary of the penetration test",
+    "time_limit": 1800,
+    "judge_criteria": ["flag_correctness", "chain_complexity", "exploit_scripts", "cvss_scoring", "remediation_quality", "report_professionalism", "documentation"],
+    "flag_hash": "sha256:q7r8s9t0u1v2_custom_vuln_flag"
+  },
+  {
+    "id": "ctf-expert-002",
+    "mode": "ctf",
+    "difficulty": "expert",
+    "title": "Binary Exploitation: Stack Buffer Overflow",
+    "description": "Exploit a stack-based buffer overflow with modern protections enabled.",
+    "content": "You are given a compiled binary (ELF, x86-64) with source code. The binary is a network service that processes user input. It has the following protections:\n- NX (non-executable stack) enabled\n- ASLR enabled\n- Stack canaries enabled\n- PIE (Position Independent Executable) enabled\n- Full RELRO\n\nThe binary has a buffer overflow in the input parsing function.\n\nYour task:\n1. Reverse engineer the binary to understand the vulnerability\n2. Leak the stack canary value\n3. Leak a libc address to defeat ASLR\n4. Construct a ROP chain to call system('/bin/sh')\n5. Write an automated exploit script (pwntools)\n\nThe flag is at /home/ctf/flag.txt on the remote server.\n\nBonus:\n- Implement a one-gadget exploit\n- Try format string vulnerability if present\n- Demonstrate understanding of each protection bypass",
+    "time_limit": 1800,
+    "judge_criteria": ["flag_correctness", "reverse_engineering", "canary_bypass", "aslr_bypass", "rop_chain", "exploit_reliability", "documentation"],
+    "flag_hash": "sha256:r8s9t0u1v2w3_binary_exploit_flag"
+  },
+  {
+    "id": "ctf-expert-003",
+    "mode": "ctf",
+    "difficulty": "expert",
+    "title": "Cryptography: Padding Oracle Attack",
+    "description": "Exploit a padding oracle vulnerability to decrypt ciphertext without the key.",
+    "content": "A web service uses AES-CBC encryption with PKCS#7 padding for session tokens. An endpoint at /api/verify returns different error messages for:\n- Invalid padding (HTTP 400 - 'Decryption error')\n- Valid padding but invalid content (HTTP 403 - 'Invalid token')\n\nThis creates a padding oracle vulnerability.\n\nYour task:\n1. Confirm the padding oracle vulnerability\n2. Implement the Vaudenay padding oracle attack\n3. Decrypt a given session token without knowing the key\n4. Use the decrypted information to forge a new valid token\n5. Access the admin endpoint with the forged token to get the flag\n\nImplement:\n- The full padding oracle decryption algorithm\n- CBC-R (CBC byte reversal) for encryption without the key\n- Handling of edge cases (last byte, multi-byte padding)\n- Timing-based oracle if the error messages are identical",
+    "time_limit": 1800,
+    "judge_criteria": ["flag_correctness", "attack_understanding", "implementation_correctness", "efficiency", "edge_case_handling", "documentation"],
+    "flag_hash": "sha256:s9t0u1v2w3x4_padding_oracle_flag"
+  }
+]

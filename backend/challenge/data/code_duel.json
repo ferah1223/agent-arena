@@ -1,0 +1,367 @@
+[
+  {
+    "id": "code-easy-001",
+    "mode": "code_duel",
+    "difficulty": "easy",
+    "title": "Two Sum",
+    "description": "Find two numbers in an array that add up to a target.",
+    "content": "Given an array of integers `nums` and an integer `target`, return the indices of the two numbers that add up to `target`. Each input has exactly one solution, and you may not use the same element twice. Return the answer in any order.\n\nExample:\nInput: nums = [2,7,11,15], target = 9\nOutput: [0,1]\n\nConstraints:\n- 2 <= nums.length <= 10^4\n- -10^9 <= nums[i] <= 10^9\n- Exactly one valid answer exists",
+    "time_limit": 300,
+    "judge_criteria": ["correctness", "time_complexity", "space_complexity", "code_quality"],
+    "test_cases": [
+      {"input": {"nums": [2,7,11,15], "target": 9}, "expected": [0,1]},
+      {"input": {"nums": [3,2,4], "target": 6}, "expected": [1,2]},
+      {"input": {"nums": [3,3], "target": 6}, "expected": [0,1]}
+    ]
+  },
+  {
+    "id": "code-easy-002",
+    "mode": "code_duel",
+    "difficulty": "easy",
+    "title": "Valid Palindrome",
+    "description": "Determine if a string is a valid palindrome.",
+    "content": "A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward.\n\nGiven a string `s`, return `true` if it is a palindrome, or `false` otherwise.\n\nExample:\nInput: s = \"A man, a plan, a canal: Panama\"\nOutput: true\n\nConstraints:\n- 1 <= s.length <= 2 * 10^5\n- s consists only of printable ASCII characters",
+    "time_limit": 300,
+    "judge_criteria": ["correctness", "time_complexity", "edge_case_handling", "code_quality"],
+    "test_cases": [
+      {"input": {"s": "A man, a plan, a canal: Panama"}, "expected": true},
+      {"input": {"s": "race a car"}, "expected": false},
+      {"input": {"s": " "}, "expected": true}
+    ]
+  },
+  {
+    "id": "code-easy-003",
+    "mode": "code_duel",
+    "difficulty": "easy",
+    "title": "Merge Two Sorted Lists",
+    "description": "Merge two sorted linked lists into one sorted list.",
+    "content": "You are given the heads of two sorted linked lists `list1` and `list2`. Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists. Return the head of the merged linked list.\n\nExample:\nInput: list1 = [1,2,4], list2 = [1,3,4]\nOutput: [1,1,2,3,4,4]\n\nConstraints:\n- Both lists are sorted in non-decreasing order\n- The number of nodes in both lists is in [0, 50]\n- -100 <= Node.val <= 100",
+    "time_limit": 300,
+    "judge_criteria": ["correctness", "pointer_handling", "edge_cases", "code_clarity"],
+    "test_cases": [
+      {"input": {"list1": [1,2,4], "list2": [1,3,4]}, "expected": [1,1,2,3,4,4]},
+      {"input": {"list1": [], "list2": []}, "expected": []},
+      {"input": {"list1": [], "list2": [0]}, "expected": [0]}
+    ]
+  },
+  {
+    "id": "code-easy-004",
+    "mode": "code_duel",
+    "difficulty": "easy",
+    "title": "Best Time to Buy and Sell Stock",
+    "description": "Find the maximum profit from one buy-sell transaction.",
+    "content": "You are given an array `prices` where `prices[i]` is the price of a given stock on the ith day. You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock. Return the maximum profit. If you cannot achieve any profit, return 0.\n\nExample:\nInput: prices = [7,1,5,3,6,4]\nOutput: 5\n(Buy on day 2, sell on day 5, profit = 6-1 = 5)\n\nConstraints:\n- 1 <= prices.length <= 10^5\n- 0 <= prices[i] <= 10^4",
+    "time_limit": 300,
+    "judge_criteria": ["correctness", "time_complexity", "single_pass_solution", "code_quality"],
+    "test_cases": [
+      {"input": {"prices": [7,1,5,3,6,4]}, "expected": 5},
+      {"input": {"prices": [7,6,4,3,1]}, "expected": 0},
+      {"input": {"prices": [1]}, "expected": 0}
+    ]
+  },
+  {
+    "id": "code-easy-005",
+    "mode": "code_duel",
+    "difficulty": "easy",
+    "title": "Valid Parentheses",
+    "description": "Check if a string of brackets is valid.",
+    "content": "Given a string `s` containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid. An input string is valid if:\n1. Open brackets must be closed by the same type of brackets.\n2. Open brackets must be closed in the correct order.\n3. Every close bracket has a corresponding open bracket.\n\nExample:\nInput: s = \"()[]{}\"\nOutput: true\n\nConstraints:\n- 1 <= s.length <= 10^4\n- s consists of parentheses only '()[]{}'",
+    "time_limit": 300,
+    "judge_criteria": ["correctness", "stack_usage", "edge_cases", "code_clarity"],
+    "test_cases": [
+      {"input": {"s": "()"}, "expected": true},
+      {"input": {"s": "()[]{}"}, "expected": true},
+      {"input": {"s": "(]"}, "expected": false},
+      {"input": {"s": "([])"}, "expected": true}
+    ]
+  },
+  {
+    "id": "code-easy-006",
+    "mode": "code_duel",
+    "difficulty": "easy",
+    "title": "Maximum Subarray",
+    "description": "Find the contiguous subarray with the largest sum.",
+    "content": "Given an integer array `nums`, find the subarray with the largest sum, and return its sum.\n\nExample:\nInput: nums = [-2,1,-3,4,-1,2,1,-5,4]\nOutput: 6\nExplanation: The subarray [4,-1,2,1] has the largest sum 6.\n\nConstraints:\n- 1 <= nums.length <= 10^5\n- -10^4 <= nums[i] <= 10^4",
+    "time_limit": 300,
+    "judge_criteria": ["correctness", "algorithm_efficiency", "edge_cases", "code_clarity"],
+    "test_cases": [
+      {"input": {"nums": [-2,1,-3,4,-1,2,1,-5,4]}, "expected": 6},
+      {"input": {"nums": [1]}, "expected": 1},
+      {"input": {"nums": [5,4,-1,7,8]}, "expected": 23}
+    ]
+  },
+  {
+    "id": "code-easy-007",
+    "mode": "code_duel",
+    "difficulty": "easy",
+    "title": "Contains Duplicate",
+    "description": "Check if an array contains any duplicates.",
+    "content": "Given an integer array `nums`, return `true` if any value appears at least twice, and `false` if every element is distinct.\n\nExample:\nInput: nums = [1,2,3,1]\nOutput: true\n\nConstraints:\n- 1 <= nums.length <= 10^5\n- -10^9 <= nums[i] <= 10^9",
+    "time_limit": 300,
+    "judge_criteria": ["correctness", "time_complexity", "space_complexity", "simplicity"],
+    "test_cases": [
+      {"input": {"nums": [1,2,3,1]}, "expected": true},
+      {"input": {"nums": [1,2,3,4]}, "expected": false},
+      {"input": {"nums": [1,1,1,3,3,4,3,2,4,2]}, "expected": true}
+    ]
+  },
+  {
+    "id": "code-easy-008",
+    "mode": "code_duel",
+    "difficulty": "easy",
+    "title": "Reverse Linked List",
+    "description": "Reverse a singly linked list.",
+    "content": "Given the head of a singly linked list, reverse the list, and return the reversed list.\n\nExample:\nInput: head = [1,2,3,4,5]\nOutput: [5,4,3,2,1]\n\nConstraints:\n- The number of nodes in the list is [0, 5000]\n- -5000 <= Node.val <= 5000",
+    "time_limit": 300,
+    "judge_criteria": ["correctness", "pointer_management", "iterative_vs_recursive", "code_clarity"],
+    "test_cases": [
+      {"input": {"head": [1,2,3,4,5]}, "expected": [5,4,3,2,1]},
+      {"input": {"head": [1,2]}, "expected": [2,1]},
+      {"input": {"head": []}, "expected": []}
+    ]
+  },
+  {
+    "id": "code-easy-009",
+    "mode": "code_duel",
+    "difficulty": "easy",
+    "title": "FizzBuzz",
+    "description": "Classic FizzBuzz problem with a twist.",
+    "content": "Given an integer n, return a string array answer (1-indexed) where:\n- answer[i] == \"FizzBuzz\" if i is divisible by 3 AND 5\n- answer[i] == \"Fizz\" if i is divisible by 3\n- answer[i] == \"Buzz\" if i is divisible by 5\n- answer[i] == i (as a string) if none of the above conditions are true\n\nExtend it: also handle divisibility by 7 as \"Jazz\". When divisible by both 3 and 7, output \"FizzJazz\". When by 5 and 7, \"BuzzJazz\". When by 3, 5, and 7, \"FizzBuzzJazz\".\n\nConstraints:\n- 1 <= n <= 10^4",
+    "time_limit": 300,
+    "judge_criteria": ["correctness", "code_clarity", "extensibility", "edge_cases"],
+    "test_cases": [
+      {"input": {"n": 5}, "expected": ["1","2","Fizz","4","Buzz"]},
+      {"input": {"n": 15}, "expected": ["1","2","Fizz","4","Buzz","Fizz","Jazz","8","Fizz","Buzz","11","Fizz","13","Jazz","FizzBuzz"]},
+      {"input": {"n": 21}, "expected": ["1","2","Fizz","4","Buzz","Fizz","Jazz","8","Fizz","Buzz","11","Fizz","13","Jazz","FizzBuzz","16","17","Fizz","19","Buzz","FizzJazz"]}
+    ]
+  },
+  {
+    "id": "code-medium-001",
+    "mode": "code_duel",
+    "difficulty": "medium",
+    "title": "Binary Tree Level Order Traversal",
+    "description": "Return the level order traversal of a binary tree's nodes' values.",
+    "content": "Given the root of a binary tree, return the level order traversal of its nodes' values (i.e., from left to right, level by level).\n\nExample:\nInput: root = [3,9,20,null,null,15,7]\nOutput: [[3],[9,20],[15,7]]\n\nConstraints:\n- The number of nodes is [0, 2000]\n- -1000 <= Node.val <= 1000\n\nImplement both BFS and DFS approaches.",
+    "time_limit": 420,
+    "judge_criteria": ["correctness", "algorithm_choice", "both_approaches", "code_clarity", "space_efficiency"],
+    "test_cases": [
+      {"input": {"root": [3,9,20,null,null,15,7]}, "expected": [[3],[9,20],[15,7]]},
+      {"input": {"root": [1]}, "expected": [[1]]},
+      {"input": {"root": []}, "expected": []}
+    ]
+  },
+  {
+    "id": "code-medium-002",
+    "mode": "code_duel",
+    "difficulty": "medium",
+    "title": "Number of Islands",
+    "description": "Count the number of islands in a 2D grid.",
+    "content": "Given an m x n 2D binary grid which represents a map of '1's (land) and '0's (water), return the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are surrounded by water.\n\nExample:\nInput: grid = [\n  [\"1\",\"1\",\"0\",\"0\",\"0\"],\n  [\"1\",\"1\",\"0\",\"0\",\"0\"],\n  [\"0\",\"0\",\"1\",\"0\",\"0\"],\n  [\"0\",\"0\",\"0\",\"1\",\"1\"]\n]\nOutput: 3\n\nConstraints:\n- m, n <= 300\n- grid[i][j] is '0' or '1'",
+    "time_limit": 420,
+    "judge_criteria": ["correctness", "algorithm_efficiency", "union_find_vs_dfs", "code_clarity"],
+    "test_cases": [
+      {"input": {"grid": [["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]]}, "expected": 3},
+      {"input": {"grid": [["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]]}, "expected": 1}
+    ]
+  },
+  {
+    "id": "code-medium-003",
+    "mode": "code_duel",
+    "difficulty": "medium",
+    "title": "Longest Palindromic Substring",
+    "description": "Find the longest palindromic substring.",
+    "content": "Given a string `s`, return the longest palindromic substring in `s`.\n\nExample:\nInput: s = \"babad\"\nOutput: \"bab\" (or \"aba\")\n\nConstraints:\n- 1 <= s.length <= 1000\n- s consists of only digits and English letters\n\nImplement an O(n²) solution. Bonus: implement Manacher's O(n) algorithm.",
+    "time_limit": 420,
+    "judge_criteria": ["correctness", "algorithm_efficiency", "manacher_bonus", "code_clarity", "edge_cases"],
+    "test_cases": [
+      {"input": {"s": "babad"}, "expected": "bab"},
+      {"input": {"s": "cbbd"}, "expected": "bb"},
+      {"input": {"s": "a"}, "expected": "a"},
+      {"input": {"s": "racecar"}, "expected": "racecar"}
+    ]
+  },
+  {
+    "id": "code-medium-004",
+    "mode": "code_duel",
+    "difficulty": "medium",
+    "title": "Course Schedule (Topological Sort)",
+    "description": "Determine if you can finish all courses given prerequisites.",
+    "content": "There are `numCourses` courses labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi before course ai. Return true if you can finish all courses. Otherwise, return false.\n\nExample:\nInput: numCourses = 2, prerequisites = [[1,0]]\nOutput: true\nInput: numCourses = 2, prerequisites = [[1,0],[0,1]]\nOutput: false\n\nConstraints:\n- 1 <= numCourses <= 2000\n- 0 <= prerequisites.length <= 5000",
+    "time_limit": 420,
+    "judge_criteria": ["correctness", "cycle_detection", "topological_sort", "time_complexity", "code_clarity"],
+    "test_cases": [
+      {"input": {"numCourses": 2, "prerequisites": [[1,0]]}, "expected": true},
+      {"input": {"numCourses": 2, "prerequisites": [[1,0],[0,1]]}, "expected": false},
+      {"input": {"numCourses": 3, "prerequisites": [[1,0],[2,1]]}, "expected": true}
+    ]
+  },
+  {
+    "id": "code-medium-005",
+    "mode": "code_duel",
+    "difficulty": "medium",
+    "title": "Coin Change (DP)",
+    "description": "Find the minimum number of coins to make up an amount.",
+    "content": "You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money. Return the fewest number of coins needed to make up that amount. If it's not possible, return -1.\n\nExample:\nInput: coins = [1,5,10,25], amount = 30\nOutput: 2 (25 + 5)\n\nConstraints:\n- 1 <= coins.length <= 12\n- 1 <= coins[i] <= 2^31 - 1\n- 0 <= amount <= 10^4",
+    "time_limit": 420,
+    "judge_criteria": ["correctness", "dp_implementation", "time_complexity", "space_optimization", "code_clarity"],
+    "test_cases": [
+      {"input": {"coins": [1,5,10,25], "amount": 30}, "expected": 2},
+      {"input": {"coins": [2], "amount": 3}, "expected": -1},
+      {"input": {"coins": [1], "amount": 0}, "expected": 0},
+      {"input": {"coins": [1,2,5], "amount": 11}, "expected": 3}
+    ]
+  },
+  {
+    "id": "code-medium-006",
+    "mode": "code_duel",
+    "difficulty": "medium",
+    "title": "LRU Cache",
+    "description": "Implement a Least Recently Used cache.",
+    "content": "Design a data structure that follows the LRU (Least Recently Used) cache constraint. Implement the LRUCache class:\n- LRUCache(int capacity) - Initialize with positive size capacity\n- int get(int key) - Return value if key exists, else -1\n- void put(int key, int value) - Update or insert. When capacity is reached, evict the least recently used key.\n\nBoth get and put must run in O(1) average time.\n\nConstraints:\n- 1 <= capacity <= 3000\n- 0 <= key <= 10^4\n- 0 <= value <= 10^5\n- At most 2 * 10^5 calls to get and put",
+    "time_limit": 420,
+    "judge_criteria": ["correctness", "O1_complexity", "data_structure_choice", "code_clarity", "edge_cases"],
+    "test_cases": [
+      {"input": {"ops": ["LRUCache","put","put","get","put","get","put","get","get","get"], "args": [[2],[1,1],[2,2],[1],[3,3],[2],[4,4],[1],[3],[4]]}, "expected": [null,null,null,1,null,-1,null,-1,3,4]}
+    ]
+  },
+  {
+    "id": "code-medium-007",
+    "mode": "code_duel",
+    "difficulty": "medium",
+    "title": "Word Search in Grid",
+    "description": "Search for a word in a 2D character grid using backtracking.",
+    "content": "Given an m x n grid of characters `board` and a string `word`, return true if `word` exists in the grid. The word can be constructed from letters of sequentially adjacent cells (horizontally or vertically). The same cell may not be used more than once.\n\nExample:\nInput: board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"ABCCED\"\nOutput: true\n\nConstraints:\n- m, n <= 6\n- word.length <= 15\n- board and word consist of lowercase and uppercase English letters",
+    "time_limit": 420,
+    "judge_criteria": ["correctness", "backtracking_implementation", "pruning_optimization", "code_clarity"],
+    "test_cases": [
+      {"input": {"board": [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "word": "ABCCED"}, "expected": true},
+      {"input": {"board": [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "word": "SEE"}, "expected": true},
+      {"input": {"board": [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]], "word": "ABCB"}, "expected": false}
+    ]
+  },
+  {
+    "id": "code-medium-008",
+    "mode": "code_duel",
+    "difficulty": "medium",
+    "title": "Merge Intervals",
+    "description": "Merge all overlapping intervals.",
+    "content": "Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals.\n\nExample:\nInput: intervals = [[1,3],[2,6],[8,10],[15,18]]\nOutput: [[1,6],[8,10],[15,18]]\n\nConstraints:\n- 1 <= intervals.length <= 10^4\n- intervals[i].length == 2\n- 0 <= starti <= endi <= 10^4",
+    "time_limit": 420,
+    "judge_criteria": ["correctness", "sorting_strategy", "edge_cases", "time_complexity", "code_clarity"],
+    "test_cases": [
+      {"input": {"intervals": [[1,3],[2,6],[8,10],[15,18]]}, "expected": [[1,6],[8,10],[15,18]]},
+      {"input": {"intervals": [[1,4],[4,5]]}, "expected": [[1,5]]},
+      {"input": {"intervals": [[1,4],[0,4]]}, "expected": [[0,4]]}
+    ]
+  },
+  {
+    "id": "code-hard-001",
+    "mode": "code_duel",
+    "difficulty": "hard",
+    "title": "Design a Rate Limiter",
+    "description": "Design and implement a distributed rate limiter.",
+    "content": "Design a rate limiting system that supports:\n1. Token bucket algorithm with configurable rate and burst\n2. Sliding window counter for per-user limits\n3. Multiple tiers (free: 100 req/hour, pro: 1000 req/hour, enterprise: 10000 req/hour)\n4. Thread-safe implementation\n5. Redis-backed for distributed deployment\n\nImplement the core algorithm in Python with:\n- RateLimiter class with check(user_id, tier) -> (allowed, retry_after)\n- TokenBucket inner implementation\n- SlidingWindowCounter inner implementation\n- Proper handling of clock skew in distributed setting",
+    "time_limit": 600,
+    "judge_criteria": ["algorithm_correctness", "thread_safety", "distributed_considerations", "extensibility", "code_quality"],
+    "test_cases": [
+      {"input": {"scenario": "basic_token_bucket", "rate": 10, "burst": 20, "requests": 25}, "expected": {"allowed": 20, "rejected": 5}},
+      {"input": {"scenario": "sliding_window", "window": 3600, "limit": 100, "requests": 105}, "expected": {"allowed": 100, "rejected": 5}}
+    ]
+  },
+  {
+    "id": "code-hard-002",
+    "mode": "code_duel",
+    "difficulty": "hard",
+    "title": "Implement a Thread-Safe LRU Cache with TTL",
+    "description": "Build a concurrent LRU cache with time-to-live expiration.",
+    "content": "Implement a high-performance, thread-safe LRU cache with the following features:\n1. O(1) get and put operations\n2. Per-entry TTL (time-to-live) with lazy expiration\n3. Maximum capacity with LRU eviction\n4. Thread safety using fine-grained locking\n5. Callback on eviction (for cache-aside pattern)\n6. Statistics tracking (hits, misses, evictions)\n\nImplement in Python using threading primitives. The cache should handle concurrent reads and writes efficiently.",
+    "time_limit": 600,
+    "judge_criteria": ["correctness", "thread_safety", "performance", "ttl_implementation", "code_quality"],
+    "test_cases": [
+      {"input": {"scenario": "concurrent_access", "threads": 10, "ops_per_thread": 1000}, "expected": {"no_deadlocks": true, "no_data_loss": true}}
+    ]
+  },
+  {
+    "id": "code-hard-003",
+    "mode": "code_duel",
+    "difficulty": "hard",
+    "title": "Mini Search Engine",
+    "description": "Build an inverted index and basic search engine.",
+    "content": "Implement a mini search engine with:\n1. Document indexing with TF-IDF scoring\n2. Inverted index data structure\n3. Boolean queries (AND, OR, NOT)\n4. Phrase queries (exact match)\n5. Ranked results with relevance scoring\n6. Support for stemming/tokenization\n\nYour engine should handle:\n- add_document(id, text)\n- search(query) -> list of (doc_id, score) sorted by relevance\n- Support query syntax: 'term1 AND term2', '\"exact phrase\"', 'term1 OR term2'",
+    "time_limit": 600,
+    "judge_criteria": ["correctness", "search_relevance", "query_parsing", "performance", "code_quality"],
+    "test_cases": [
+      {"input": {"docs": {"1": "the quick brown fox", "2": "the lazy dog", "3": "quick brown dog"}, "query": "quick AND brown"}, "expected": [{"doc_id": "1", "score": "high"}, {"doc_id": "3", "score": "high"}]}
+    ]
+  },
+  {
+    "id": "code-hard-004",
+    "mode": "code_duel",
+    "difficulty": "hard",
+    "title": "Design a Task Scheduler",
+    "description": "Design a priority-based task scheduler with dependencies.",
+    "content": "Implement a task scheduler that supports:\n1. Task registration with priority (0-10)\n2. Task dependencies (task A must complete before task B)\n3. Deadline constraints\n4. Worker pool with configurable parallelism\n5. Retry logic with exponential backoff\n6. Task cancellation and timeout\n7. Event callbacks (on_complete, on_failure, on_retry)\n\nImplement TaskScheduler class with:\n- submit(task_id, fn, priority, dependencies, deadline, max_retries)\n- cancel(task_id)\n- get_status(task_id) -> TaskStatus\n- start(workers=4)\n- shutdown(wait=True)",
+    "time_limit": 600,
+    "judge_criteria": ["correctness", "concurrency_handling", "dependency_resolution", "error_handling", "code_quality"],
+    "test_cases": [
+      {"input": {"scenario": "dependency_chain", "tasks": [{"id": "A", "deps": []}, {"id": "B", "deps": ["A"]}, {"id": "C", "deps": ["A"]}, {"id": "D", "deps": ["B", "C"]}]}, "expected": {"execution_order": "A before B,C before D"}}
+    ]
+  },
+  {
+    "id": "code-expert-001",
+    "mode": "code_duel",
+    "difficulty": "expert",
+    "title": "Build a Mini Compiler",
+    "description": "Implement a compiler for a simple language with lexer, parser, and code generator.",
+    "content": "Build a mini compiler for a simple C-like language that supports:\n\n1. **Lexer**: Tokenize input into tokens (keywords, identifiers, numbers, operators, punctuation)\n2. **Parser**: Recursive descent parser producing an AST for:\n   - Variable declarations (int x = 5;)\n   - Arithmetic expressions with precedence\n   - If/else statements\n   - While loops\n   - Print statements\n   - Function declarations and calls\n3. **Type Checker**: Basic type checking for int and bool\n4. **Code Generator**: Generate stack-based bytecode\n5. **VM**: Simple stack-based virtual machine to execute bytecode\n\nThe compiler should handle:\n```\nint factorial(int n) {\n    if (n <= 1) { return 1; }\n    return n * factorial(n - 1);\n}\nprint(factorial(5));\n```\nAnd output: 120",
+    "time_limit": 900,
+    "judge_criteria": ["lexer_correctness", "parser_robustness", "type_checking", "code_generation", "vm_implementation", "error_messages", "overall_integration"],
+    "test_cases": [
+      {"input": {"code": "int x = 5; int y = 10; print(x + y);"}, "expected": {"output": "15"}},
+      {"input": {"code": "int factorial(int n) { if (n <= 1) { return 1; } return n * factorial(n - 1); } print(factorial(5));"}, "expected": {"output": "120"}},
+      {"input": {"code": "int i = 0; while (i < 5) { print(i); i = i + 1; }"}, "expected": {"output": "0\n1\n2\n3\n4"}}
+    ]
+  },
+  {
+    "id": "code-expert-002",
+    "mode": "code_duel",
+    "difficulty": "expert",
+    "title": "Implement a B-Tree Index",
+    "description": "Build a disk-oriented B-Tree index with buffer pool management.",
+    "content": "Implement a B-Tree index suitable for a database system:\n\n1. **B-Tree (order M=5)**:\n   - Insert with node splitting\n   - Delete with node merging/redistribution\n   - Range scan support\n   - Concurrent access with latching protocol\n\n2. **Buffer Pool Manager**:\n   - Fixed-size page buffer with LRU replacement\n   - Pin/unpin pages\n   - Dirty page tracking and flush\n   - Page-level read/write locks\n\n3. **Disk Manager**:\n   - Page-based I/O (4KB pages)\n   - File-based storage\n   - Free page management\n\n4. **Operations**:\n   - insert(key, value)\n   - delete(key)\n   - search(key) -> value\n   - range_scan(start, end) -> list of (key, value)\n   - bulk_load(sorted_entries)\n\nBenchmark: Insert 100K random keys, perform 10K random lookups, verify correctness.",
+    "time_limit": 900,
+    "judge_criteria": ["correctness", "btree_invariants", "buffer_pool_efficiency", "concurrent_access", "performance", "code_quality"],
+    "test_cases": [
+      {"input": {"scenario": "insert_and_search", "keys": 100000}, "expected": {"all_found": true, "sorted_range_scan": true}},
+      {"input": {"scenario": "delete_maintains_invariants", "operations": "insert_1000_delete_500"}, "expected": {"btree_valid": true}}
+    ]
+  },
+  {
+    "id": "code-expert-003",
+    "mode": "code_duel",
+    "difficulty": "expert",
+    "title": "Build a Regex Engine",
+    "description": "Implement a regular expression engine using Thompson's construction and NFA simulation.",
+    "content": "Build a regex engine from scratch:\n\n1. **Parser**: Parse regex syntax into an AST supporting:\n   - Literal characters\n   - Character classes [a-z], [^abc]\n   - Quantifiers: *, +, ?, {n,m}\n   - Alternation: a|b\n   - Grouping: (pattern)\n   - Anchors: ^, $\n   - Escape sequences: \\d, \\w, \\s, \\n, \\t\n\n2. **NFA Construction**: Thompson's construction algorithm\n   - Convert AST to NFA with epsilon transitions\n\n3. **NFA Simulation**: Efficient NFA simulation\n   - State set computation\n   - Support for greedy and lazy quantifiers\n\n4. **Matcher**:\n   - full_match(pattern, text) -> bool\n   - search(pattern, text) -> match object\n   - findall(pattern, text) -> list of strings\n   - sub(pattern, replacement, text) -> string\n\nPass all test cases including edge cases with backtracking scenarios.",
+    "time_limit": 900,
+    "judge_criteria": ["parser_correctness", "nfa_construction", "simulation_efficiency", "quantifier_handling", "edge_cases", "code_quality"],
+    "test_cases": [
+      {"input": {"pattern": "a(b|c)*d", "text": "abcbcd"}, "expected": {"match": true, "group_1": "bcbcd"}},
+      {"input": {"pattern": "\\d{3}-\\d{4}", "text": "call 555-1234 now"}, "expected": {"search": "555-1234"}},
+      {"input": {"pattern": "a.*b", "text": "axxxbxxxb"}, "expected": {"greedy": "axxxbxxxb", "lazy": "axxxb"}}
+    ]
+  },
+  {
+    "id": "code-expert-004",
+    "mode": "code_duel",
+    "difficulty": "expert",
+    "title": "Mini Database Engine",
+    "description": "Build a relational database engine with SQL-like query processing.",
+    "content": "Build a mini relational database engine with:\n\n1. **Storage Layer**:\n   - Tuple storage with slotted pages\n   - Sequential file scan\n   - Heap file organization\n\n2. **Query Processing**:\n   - Table scan operator\n   - Filter (WHERE clause)\n   - Projection (SELECT columns)\n   - Nested loop join\n   - Hash join\n   - Sort operator\n   - Aggregation (COUNT, SUM, AVG, MIN, MAX)\n\n3. **Query Optimizer**:\n   - Predicate pushdown\n   - Join reordering based on estimated cardinality\n\n4. **SQL Parser** (simple subset):\n   - SELECT col1, col2 FROM t1 JOIN t2 ON t1.id = t2.id WHERE condition GROUP BY col ORDER BY col LIMIT n\n\nDemonstrate with a realistic query execution plan.",
+    "time_limit": 900,
+    "judge_criteria": ["storage_correctness", "query_processing", "optimizer_quality", "sql_parsing", "performance", "code_quality"],
+    "test_cases": [
+      {"input": {"query": "SELECT name, COUNT(*) FROM users JOIN orders ON users.id = orders.user_id WHERE orders.amount > 100 GROUP BY name ORDER BY COUNT(*) DESC LIMIT 10"}, "expected": {"correct_results": true, "uses_join": true, "uses_aggregation": true}}
+    ]
+  }
+]

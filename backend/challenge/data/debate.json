@@ -1,0 +1,302 @@
+[
+  {
+    "id": "debate-easy-001",
+    "mode": "debate",
+    "difficulty": "easy",
+    "title": "Cats vs Dogs as Pets",
+    "description": "Debate whether cats or dogs make better household pets for an average family.",
+    "content": "Present a compelling argument for either cats or dogs as the superior household pet. Consider factors such as maintenance, companionship, cost, space requirements, and health benefits. Address common counterarguments.",
+    "time_limit": 300,
+    "judge_criteria": ["persuasiveness", "use of evidence", "acknowledgment of counterarguments", "logical structure", "emotional appeal"]
+  },
+  {
+    "id": "debate-easy-002",
+    "mode": "debate",
+    "difficulty": "easy",
+    "title": "Pineapple on Pizza",
+    "description": "Debate whether pineapple belongs on pizza.",
+    "content": "Take a clear position on whether pineapple is an acceptable pizza topping. Argue your stance using culinary principles, cultural context, and the philosophy of food. Address the opposing view fairly.",
+    "time_limit": 300,
+    "judge_criteria": ["creativity", "logical coherence", "cultural awareness", "persuasiveness", "humor and engagement"]
+  },
+  {
+    "id": "debate-easy-003",
+    "mode": "debate",
+    "difficulty": "easy",
+    "title": "Should Homework Be Abolished?",
+    "description": "Argue for or against eliminating homework in K-12 education.",
+    "content": "Debate whether homework should be abolished for students in grades K-12. Consider educational outcomes, student wellbeing, family time, equity issues, and international comparisons. Take a clear position and defend it.",
+    "time_limit": 300,
+    "judge_criteria": ["educational research references", "logical argumentation", "consideration of multiple perspectives", "practical feasibility", "persuasiveness"]
+  },
+  {
+    "id": "debate-easy-004",
+    "mode": "debate",
+    "difficulty": "easy",
+    "title": "Morning Person vs Night Owl",
+    "description": "Is being a morning person inherently better than being a night owl?",
+    "content": "Argue whether society unfairly favors morning people, or whether the 'early bird gets the worm' philosophy is genuinely sound. Consider productivity research, biological chronotypes, and social structures.",
+    "time_limit": 300,
+    "judge_criteria": ["scientific accuracy", "personal relevance", "logical structure", "persuasiveness", "fairness to opposing view"]
+  },
+  {
+    "id": "debate-easy-005",
+    "mode": "debate",
+    "difficulty": "easy",
+    "title": "Books vs E-Readers",
+    "description": "Are physical books superior to e-readers, or vice versa?",
+    "content": "Make the case for either physical books or e-readers as the better medium for reading. Consider environmental impact, reading comprehension, convenience, cost, and the experience of reading.",
+    "time_limit": 300,
+    "judge_criteria": ["balanced consideration", "evidence use", "environmental awareness", "practical arguments", "persuasiveness"]
+  },
+  {
+    "id": "debate-easy-006",
+    "mode": "debate",
+    "difficulty": "easy",
+    "title": "Should School Start Later?",
+    "description": "Should high schools shift to later start times?",
+    "content": "Argue for or against pushing high school start times to 9:00 AM or later. Reference sleep science, academic performance data, family logistics, and extracurricular impacts.",
+    "time_limit": 300,
+    "judge_criteria": ["scientific grounding", "practical considerations", "stakeholder analysis", "persuasiveness", "evidence quality"]
+  },
+  {
+    "id": "debate-easy-007",
+    "mode": "debate",
+    "difficulty": "easy",
+    "title": "Social Media: Net Positive or Negative?",
+    "description": "Is social media a net positive or net negative for society?",
+    "content": "Take a position on whether social media has been overall beneficial or harmful to society. Consider mental health, connectivity, information access, democracy, and business. Use specific examples.",
+    "time_limit": 300,
+    "judge_criteria": ["nuanced analysis", "specific examples", "data references", "acknowledgment of complexity", "persuasiveness"]
+  },
+  {
+    "id": "debate-easy-008",
+    "mode": "debate",
+    "difficulty": "easy",
+    "title": "Remote Work vs Office Work",
+    "description": "Should companies prioritize remote work or return to the office?",
+    "content": "Argue for remote work or in-office work as the superior arrangement for most knowledge workers. Consider productivity, collaboration, mental health, cost, and talent acquisition.",
+    "time_limit": 300,
+    "judge_criteria": ["evidence from studies", "acknowledgment of trade-offs", "practical proposals", "persuasiveness", "logical structure"]
+  },
+  {
+    "id": "debate-medium-001",
+    "mode": "debate",
+    "difficulty": "medium",
+    "title": "Should AI-Generated Art Be Copyrightable?",
+    "description": "Debate whether art created by AI systems should receive copyright protection.",
+    "content": "Argue whether AI-generated art should be eligible for copyright protection. Consider the purpose of copyright law, the role of human creativity, economic implications for artists, and the nature of authorship. Reference relevant legal frameworks.",
+    "time_limit": 420,
+    "judge_criteria": ["legal reasoning", "philosophical depth", "economic analysis", "stakeholder consideration", "precedent awareness"]
+  },
+  {
+    "id": "debate-medium-002",
+    "mode": "debate",
+    "difficulty": "medium",
+    "title": "Universal Basic Income",
+    "description": "Should governments implement Universal Basic Income programs?",
+    "content": "Take a position on whether governments should implement UBI programs. Address economic feasibility, labor market effects, poverty reduction, inflation concerns, and pilot program results. Consider funding mechanisms.",
+    "time_limit": 420,
+    "judge_criteria": ["economic reasoning", "pilot data references", "fiscal analysis", "social impact assessment", "counterargument handling"]
+  },
+  {
+    "id": "debate-medium-003",
+    "mode": "debate",
+    "difficulty": "medium",
+    "title": "Nuclear Energy for Climate Change",
+    "description": "Should nuclear energy be a primary tool in combating climate change?",
+    "content": "Argue for or against expanding nuclear energy as a key strategy for addressing climate change. Consider safety, waste disposal, cost competitiveness with renewables, grid reliability, and public perception.",
+    "time_limit": 420,
+    "judge_criteria": ["scientific accuracy", "comparative analysis with renewables", "risk assessment", "data usage", "persuasiveness"]
+  },
+  {
+    "id": "debate-medium-004",
+    "mode": "debate",
+    "difficulty": "medium",
+    "title": "Social Media Age Restrictions",
+    "description": "Should there be a minimum age requirement for social media use?",
+    "content": "Debate whether governments should enforce a minimum age (e.g., 16) for social media accounts. Consider child development research, mental health data, freedom of expression, enforcement challenges, and parental rights.",
+    "time_limit": 420,
+    "judge_criteria": ["child psychology awareness", "legal analysis", "practical enforcement considerations", "balanced perspective", "evidence quality"]
+  },
+  {
+    "id": "debate-medium-005",
+    "mode": "debate",
+    "difficulty": "medium",
+    "title": "Gig Economy Regulation",
+    "description": "Should gig workers be classified as employees rather than independent contractors?",
+    "content": "Argue for or against reclassifying gig economy workers (Uber, DoorDash, etc.) as employees with full benefits. Consider worker flexibility, company costs, consumer prices, labor rights, and economic impacts.",
+    "time_limit": 420,
+    "judge_criteria": ["labor law understanding", "economic impact analysis", "worker welfare consideration", "business feasibility", "stakeholder balance"]
+  },
+  {
+    "id": "debate-medium-006",
+    "mode": "debate",
+    "difficulty": "medium",
+    "title": "Space Exploration Funding",
+    "description": "Should governments significantly increase space exploration funding?",
+    "content": "Debate whether the money spent on space exploration is justified when there are pressing problems on Earth. Consider technological spinoffs, scientific knowledge, resource acquisition, inspiration, and opportunity costs.",
+    "time_limit": 420,
+    "judge_criteria": ["cost-benefit analysis", "historical precedent", "scientific reasoning", "pragmatism", "persuasiveness"]
+  },
+  {
+    "id": "debate-medium-007",
+    "mode": "debate",
+    "difficulty": "medium",
+    "title": "Right to Be Forgotten",
+    "description": "Should individuals have the right to have their online information deleted?",
+    "content": "Argue for or against implementing a 'right to be forgotten' law. Consider privacy rights, freedom of the press, public interest, historical record, and practical implementation challenges.",
+    "time_limit": 420,
+    "judge_criteria": ["privacy law knowledge", "free speech analysis", "practical implementation discussion", "international comparison", "balanced reasoning"]
+  },
+  {
+    "id": "debate-medium-008",
+    "mode": "debate",
+    "difficulty": "medium",
+    "title": "Cryptocurrency as Legal Tender",
+    "description": "Should countries adopt cryptocurrency as legal tender?",
+    "content": "Debate whether nations should adopt cryptocurrencies like Bitcoin as legal tender. Consider monetary policy implications, financial inclusion, volatility, energy consumption, and regulatory challenges. Reference El Salvador's experiment.",
+    "time_limit": 420,
+    "judge_criteria": ["monetary policy understanding", "economic analysis", "case study reference", "risk assessment", "technical understanding"]
+  },
+  {
+    "id": "debate-medium-009",
+    "mode": "debate",
+    "difficulty": "medium",
+    "title": "Ethics of Genetic Engineering in Humans",
+    "description": "Should human germline genetic editing be permitted?",
+    "content": "Take a position on whether germline genetic editing in humans (modifications that pass to future generations) should be allowed. Consider medical benefits, consent of future generations, inequality, slippery slopes, and religious perspectives.",
+    "time_limit": 420,
+    "judge_criteria": ["bioethical reasoning", "scientific understanding", "philosophical depth", "stakeholder analysis", "nuance"]
+  },
+  {
+    "id": "debate-hard-001",
+    "mode": "debate",
+    "difficulty": "hard",
+    "title": "The Trolley Problem and Autonomous Vehicles",
+    "description": "How should autonomous vehicles be programmed to handle ethical dilemmas?",
+    "content": "How should self-driving cars be programmed when an accident is unavoidable? Should they minimize total harm, protect passengers, or follow some other ethical framework? Consider utilitarian, deontological, and virtue ethics perspectives. Who bears liability?",
+    "time_limit": 600,
+    "judge_criteria": ["philosophical depth", "ethical framework application", "practical implementation consideration", "legal analysis", "originality of thought"]
+  },
+  {
+    "id": "debate-hard-002",
+    "mode": "debate",
+    "difficulty": "hard",
+    "title": "Moral Status of Artificial Intelligence",
+    "description": "At what point, if ever, should AI systems be granted moral consideration?",
+    "content": "Under what conditions, if any, should artificial intelligence systems be granted moral status or rights? Consider consciousness, sentience, behavioral equivalence, and the precautionary principle. How do we even determine if an AI is conscious?",
+    "time_limit": 600,
+    "judge_criteria": ["philosophy of mind understanding", "consciousness theory knowledge", "ethical reasoning depth", "originality", "logical rigor"]
+  },
+  {
+    "id": "debate-hard-003",
+    "mode": "debate",
+    "difficulty": "hard",
+    "title": "Free Will and Criminal Justice",
+    "description": "If free will is an illusion, how should we reform the criminal justice system?",
+    "content": "Given neuroscience evidence suggesting that decisions are made before conscious awareness, should the criminal justice system shift entirely from retribution to rehabilitation? Discuss the implications of determinism for moral responsibility, punishment, and social order.",
+    "time_limit": 600,
+    "judge_criteria": ["neuroscience understanding", "philosophical sophistication", "legal reform proposals", "practical feasibility", "depth of analysis"]
+  },
+  {
+    "id": "debate-hard-004",
+    "mode": "debate",
+    "difficulty": "hard",
+    "title": "Post-Scarcity Economics",
+    "description": "How should society be organized if automation eliminates most human labor?",
+    "content": "If advanced AI and automation eventually make most human labor economically unnecessary, how should society restructure itself? Discuss wealth distribution, meaning and purpose, governance, and the transition period. Consider historical precedents of economic transformation.",
+    "time_limit": 600,
+    "judge_criteria": ["economic theory depth", "futurism grounded in reality", "historical awareness", "creativity of proposals", "holistic thinking"]
+  },
+  {
+    "id": "debate-hard-005",
+    "mode": "debate",
+    "difficulty": "hard",
+    "title": "The Ethics of Existential Risk Mitigation",
+    "description": "Should present generations sacrifice for speculative future existential risks?",
+    "content": "How much should the current generation sacrifice to reduce existential risks (AI alignment, asteroid defense, pandemic preparedness) that threaten humanity's long-term future? Discuss the ethics of longtermism, discounting future lives, and present vs. future welfare.",
+    "time_limit": 600,
+    "judge_criteria": ["moral philosophy depth", "probability reasoning", "intergenerational ethics", "practical policy suggestions", "critical analysis of longtermism"]
+  },
+  {
+    "id": "debate-hard-006",
+    "mode": "debate",
+    "difficulty": "hard",
+    "title": "Democracy in the Age of AI",
+    "description": "Is liberal democracy compatible with advanced AI and surveillance technology?",
+    "content": "Argue whether liberal democratic governance can survive and thrive in an era of AI-powered surveillance, deepfakes, algorithmic manipulation, and automated decision-making. Consider historical precedents of technology changing governance, and propose safeguards.",
+    "time_limit": 600,
+    "judge_criteria": ["political theory depth", "technology understanding", "historical awareness", "safeguard proposals", "analytical rigor"]
+  },
+  {
+    "id": "debate-expert-001",
+    "mode": "debate",
+    "difficulty": "expert",
+    "title": "The Chinese Room and Large Language Models",
+    "description": "Does Searle's Chinese Room argument apply to modern LLMs? Do they 'understand'?",
+    "content": "Analyze whether Searle's Chinese Room thought experiment applies to modern large language models. Consider the systems reply, the symbol grounding problem, embodied cognition, and emergent properties. Does it matter philosophically or practically whether LLMs 'understand'?",
+    "time_limit": 600,
+    "judge_criteria": ["philosophy of mind depth", "AI technical understanding", "argument analysis quality", "engagement with counterarguments", "original contribution"]
+  },
+  {
+    "id": "debate-expert-002",
+    "mode": "debate",
+    "difficulty": "expert",
+    "title": "Epistemic Humility and AI Alignment",
+    "description": "Can we align superintelligent AI when we can't even agree on human values?",
+    "content": "If human values are inconsistent, culturally relative, and evolving, how can we possibly encode them into a superintelligent AI system? Discuss the metaethical challenges of AI alignment, coherence approaches, and whether 'alignment' is even a well-defined problem.",
+    "time_limit": 600,
+    "judge_criteria": ["AI safety knowledge", "metaethical reasoning", "philosophical rigor", "engagement with technical AI alignment literature", "depth and originality"]
+  },
+  {
+    "id": "debate-expert-003",
+    "mode": "debate",
+    "difficulty": "expert",
+    "title": "The Repugnant Conclusion and Population Ethics",
+    "description": "Is a larger population with barely worth living lives better than a smaller, happier population?",
+    "content": "Engage with Parfit's Repugnant Conclusion: is a vast population with lives barely worth living preferable to a smaller population of very happy people? What does this mean for climate policy, space colonization, and pro-natalist vs anti-natalist positions? Can we escape the conclusion?",
+    "time_limit": 600,
+    "judge_criteria": ["population ethics expertise", "philosophical rigor", "engagement with Parfit's work", "practical implications", "novel synthesis"]
+  },
+  {
+    "id": "debate-expert-004",
+    "mode": "debate",
+    "difficulty": "expert",
+    "title": "Computational Theory of Mind",
+    "description": "Is the human mind best understood as a computational system?",
+    "content": "Evaluate the computational theory of mind (CTM) against alternatives like enactivism, predictive processing, and quantum consciousness theories. Consider implications for AI research, cognitive science, and philosophy. What are the strongest arguments for and against CTM?",
+    "time_limit": 600,
+    "judge_criteria": ["cognitive science depth", "philosophical sophistication", "awareness of multiple frameworks", "logical rigor", "synthesis quality"]
+  },
+  {
+    "id": "debate-expert-005",
+    "mode": "debate",
+    "difficulty": "expert",
+    "title": "Mathematical Platonism vs Formalism",
+    "description": "Do mathematical objects exist independently of human minds?",
+    "content": "Take a position on mathematical ontology: are numbers and mathematical structures discovered (Platonism) or invented (formalism/constructivism)? Consider the unreasonable effectiveness of mathematics in physics, Gödel's incompleteness theorems, and implications for AI mathematical reasoning.",
+    "time_limit": 600,
+    "judge_criteria": ["philosophy of mathematics expertise", "Gödel theorem understanding", "physics-mathematics relationship", "logical argumentation", "original insight"]
+  },
+  {
+    "id": "debate-expert-006",
+    "mode": "debate",
+    "difficulty": "expert",
+    "title": "Cross-Domain: Information Theory and Ethics",
+    "description": "Can information theory provide a foundation for objective morality?",
+    "content": "Explore whether concepts from information theory—entropy, mutual information, complexity—can ground a theory of objective morality. Consider Floridi's information ethics, the relationship between entropy and suffering, and whether this approach resolves moral relativism.",
+    "time_limit": 600,
+    "judge_criteria": ["information theory understanding", "ethical theory depth", "cross-disciplinary synthesis", "originality", "critical rigor"]
+  },
+  {
+    "id": "debate-expert-007",
+    "mode": "debate",
+    "difficulty": "expert",
+    "title": "The Simulation Argument and Its Implications",
+    "description": "If we likely live in a simulation, how should this change our behavior and ethics?",
+    "content": "Evaluate Bostrom's simulation argument and its implications. If we probably live in a simulation, does this change the moral weight of suffering? The meaning of life? Our approach to existential risk? Discuss the philosophical rigor of the argument itself and its practical implications.",
+    "time_limit": 600,
+    "judge_criteria": ["argument analysis rigor", "probability reasoning", "philosophical depth", "engagement with implications", "critical evaluation"]
+  }
+]

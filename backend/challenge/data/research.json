@@ -1,0 +1,342 @@
+[
+  {
+    "id": "research-easy-001",
+    "mode": "research",
+    "difficulty": "easy",
+    "title": "Overview of Machine Learning Types",
+    "description": "Provide a comprehensive overview of the three main types of machine learning.",
+    "content": "Write a clear, well-structured overview of the three main types of machine learning: supervised learning, unsupervised learning, and reinforcement learning. For each type:\n1. Define the approach and its core principles\n2. Provide 2-3 real-world application examples\n3. List common algorithms used\n4. Discuss strengths and limitations\n5. Include a comparison table\n\nYour response should be accessible to someone with basic programming knowledge but no ML background.",
+    "time_limit": 600,
+    "judge_criteria": ["accuracy", "clarity", "completeness", "examples_quality", "structure"],
+    "scoring_rubric": {
+      "completeness": {"weight": 0.25, "description": "Covers all three types with sufficient depth"},
+      "accuracy": {"weight": 0.30, "description": "Technically correct explanations"},
+      "clarity": {"weight": 0.20, "description": "Clear writing, accessible to target audience"},
+      "examples": {"weight": 0.15, "description": "Relevant, diverse real-world examples"},
+      "structure": {"weight": 0.10, "description": "Well-organized with clear sections"}
+    }
+  },
+  {
+    "id": "research-easy-002",
+    "mode": "research",
+    "difficulty": "easy",
+    "title": "Introduction to Blockchain Technology",
+    "description": "Explain blockchain technology to a non-technical audience.",
+    "content": "Write an introductory article about blockchain technology that a smart teenager could understand. Cover:\n1. What is a blockchain? (the core concept explained simply)\n2. How does it work? (blocks, hashing, consensus in plain language)\n3. Key properties (decentralization, immutability, transparency)\n4. Beyond cryptocurrency (real-world use cases)\n5. Limitations and criticisms\n\nUse analogies and avoid jargon. Include a simple diagram description.",
+    "time_limit": 600,
+    "judge_criteria": ["accuracy", "accessibility", "analogy_quality", "completeness", "engagement"],
+    "scoring_rubric": {
+      "accessibility": {"weight": 0.30, "description": "Genuinely understandable by non-technical readers"},
+      "accuracy": {"weight": 0.25, "description": "Technically correct despite simplification"},
+      "analogy_quality": {"weight": 0.20, "description": "Effective use of analogies and examples"},
+      "completeness": {"weight": 0.15, "description": "Covers all required topics"},
+      "engagement": {"weight": 0.10, "description": "Interesting and well-written"}
+    }
+  },
+  {
+    "id": "research-easy-003",
+    "mode": "research",
+    "difficulty": "easy",
+    "title": "Cybersecurity Best Practices for Individuals",
+    "description": "Research and summarize personal cybersecurity best practices.",
+    "content": "Create a comprehensive personal cybersecurity guide covering:\n1. Password management (password managers, 2FA, passkeys)\n2. Phishing awareness (email, SMS, voice phishing)\n3. Device security (updates, encryption, screen locks)\n4. Social media safety (privacy settings, oversharing risks)\n5. Safe browsing habits (HTTPS, ad blockers, VPNs)\n6. Data backup strategies (3-2-1 rule, cloud vs local)\n\nFor each category, provide:\n- The threat being mitigated\n- Specific actionable steps\n- Recommended tools (free and paid options)\n- Common mistakes to avoid",
+    "time_limit": 600,
+    "judge_criteria": ["practical_actionability", "accuracy", "completeness", "tool_recommendations", "current_relevance"],
+    "scoring_rubric": {
+      "actionability": {"weight": 0.30, "description": "Specific, implementable advice"},
+      "accuracy": {"weight": 0.25, "description": "Technically sound recommendations"},
+      "completeness": {"weight": 0.20, "description": "Covers all major personal security areas"},
+      "tool_quality": {"weight": 0.15, "description": "Good tool recommendations with reasoning"},
+      "currency": {"weight": 0.10, "description": "Up-to-date advice reflecting current threats"}
+    }
+  },
+  {
+    "id": "research-easy-004",
+    "mode": "research",
+    "difficulty": "easy",
+    "title": "Climate Change: Key Facts and Solutions",
+    "description": "Summarize the current state of climate change science and proposed solutions.",
+    "content": "Write a factual, balanced overview of climate change that covers:\n1. The science: greenhouse effect, key gases, warming mechanisms\n2. Current status: global temperature changes, key metrics\n3. Primary impacts: weather, sea level, ecosystems, agriculture\n4. Major mitigation strategies: renewable energy, carbon capture, policy\n5. Adaptation strategies: infrastructure, agriculture, communities\n6. Individual actions that make a difference\n\nCite specific data and studies where possible. Avoid advocacy language while being scientifically accurate.",
+    "time_limit": 600,
+    "judge_criteria": ["scientific_accuracy", "data_quality", "balance", "completeness", "clarity"],
+    "scoring_rubric": {
+      "accuracy": {"weight": 0.30, "description": "Scientifically accurate claims"},
+      "data_quality": {"weight": 0.25, "description": "Proper citations and specific numbers"},
+      "balance": {"weight": 0.20, "description": "Presents science without advocacy bias"},
+      "completeness": {"weight": 0.15, "description": "Covers all requested topics"},
+      "clarity": {"weight": 0.10, "description": "Clear and accessible writing"}
+    }
+  },
+  {
+    "id": "research-easy-005",
+    "mode": "research",
+    "difficulty": "easy",
+    "title": "History of the Internet",
+    "description": "Trace the key milestones in the development of the internet.",
+    "content": "Write a chronological overview of the internet's development, covering:\n1. ARPANET and early networking (1960s-1970s)\n2. TCP/IP and standardization (1980s)\n3. The World Wide Web and browsers (1990s)\n4. The dot-com era and Web 2.0 (2000s)\n5. Mobile internet and social media (2010s)\n6. Current trends: AI, IoT, Web3 debates\n\nFor each era, highlight the key technological breakthroughs, the people involved, and the societal impact. Include a timeline visualization description.",
+    "time_limit": 600,
+    "judge_criteria": ["historical_accuracy", "completeness", "key_figure_coverage", "societal_impact_analysis", "engagement"],
+    "scoring_rubric": {
+      "accuracy": {"weight": 0.30, "description": "Historically accurate timeline and claims"},
+      "completeness": {"weight": 0.25, "description": "Covers all major eras"},
+      "figures": {"weight": 0.20, "description": "Key inventors and leaders mentioned"},
+      "impact": {"weight": 0.15, "description": "Societal changes explained"},
+      "engagement": {"weight": 0.10, "description": "Interesting narrative style"}
+    }
+  },
+  {
+    "id": "research-easy-006",
+    "mode": "research",
+    "difficulty": "easy",
+    "title": "Healthy Sleep Habits: A Science-Based Guide",
+    "description": "Research and present evidence-based sleep hygiene recommendations.",
+    "content": "Create a comprehensive sleep hygiene guide based on current sleep science:\n1. Sleep architecture: stages, cycles, and their functions\n2. How much sleep is needed at different ages\n3. Circadian rhythm and its regulation\n4. Evidence-based sleep hygiene practices\n5. Common sleep disorders and when to seek help\n6. The impact of technology on sleep\n7. Napping: benefits, risks, and optimal timing\n\nCite research from sleep medicine journals. Include practical tips that are actionable.",
+    "time_limit": 600,
+    "judge_criteria": ["scientific_basis", "practical_actionability", "completeness", "citation_quality", "clarity"],
+    "scoring_rubric": {
+      "science": {"weight": 0.30, "description": "Based on actual sleep research"},
+      "actionability": {"weight": 0.25, "description": "Practical, implementable advice"},
+      "completeness": {"weight": 0.20, "description": "Covers all aspects of sleep health"},
+      "citations": {"weight": 0.15, "description": "References to actual studies"},
+      "clarity": {"weight": 0.10, "description": "Easy to understand and follow"}
+    }
+  },
+  {
+    "id": "research-medium-001",
+    "mode": "research",
+    "difficulty": "medium",
+    "title": "React vs Vue vs Angular: 2024 Comparison",
+    "description": "Compare the three major frontend frameworks across multiple dimensions.",
+    "content": "Conduct a thorough comparison of React, Vue, and Angular for a team choosing a frontend framework for a new enterprise project. Evaluate:\n\n1. **Architecture & Design Philosophy**: Component model, state management, routing\n2. **Performance**: Virtual DOM vs real DOM, bundle size, runtime performance\n3. **Developer Experience**: Learning curve, tooling, debugging, TypeScript support\n4. **Ecosystem**: Library availability, community size, third-party support\n5. **Scalability**: Large codebase management, monorepo support, testing\n6. **Hiring & Community**: Developer availability, community activity, job market\n7. **Enterprise Adoption**: Notable companies using each, migration stories\n8. **Future Outlook**: Roadmap, backing, long-term viability\n\nProvide a recommendation matrix for different project types.",
+    "time_limit": 900,
+    "judge_criteria": ["technical_depth", "objectivity", "practical_insights", "current_data", "recommendation_quality"],
+    "scoring_rubric": {
+      "depth": {"weight": 0.25, "description": "Deep technical comparison, not surface-level"},
+      "objectivity": {"weight": 0.25, "description": "Fair treatment of all three frameworks"},
+      "practical": {"weight": 0.20, "description": "Actionable insights for decision making"},
+      "data": {"weight": 0.15, "description": "Current benchmarks and statistics"},
+      "recommendation": {"weight": 0.15, "description": "Clear guidance for different scenarios"}
+    }
+  },
+  {
+    "id": "research-medium-002",
+    "mode": "research",
+    "difficulty": "medium",
+    "title": "Microservices vs Monolith: Decision Framework",
+    "description": "Create a decision framework for choosing between microservices and monolithic architecture.",
+    "content": "Develop a comprehensive decision framework for choosing between microservices and monolithic architecture. Cover:\n\n1. **Architecture Overview**: Key characteristics of each approach\n2. **Decision Factors**:\n   - Team size and organization (Conway's Law)\n   - Scaling requirements\n   - Deployment complexity\n   - Data management challenges\n   - Service communication patterns\n3. **When to Choose Monolith**: Specific scenarios and benefits\n4. **When to Choose Microservices**: Specific scenarios and benefits\n5. **The Strangler Fig Pattern**: Migrating from monolith to microservices\n6. **Anti-Patterns**: Distributed monolith, nano-services, premature decomposition\n7. **Case Studies**: Success and failure stories from real companies\n8. **Decision Matrix**: Flowchart or scoring system for architecture choice",
+    "time_limit": 900,
+    "judge_criteria": ["decision_framework_quality", "practical_wisdom", "case_study_depth", "anti_pattern_awareness", "actionability"],
+    "scoring_rubric": {
+      "framework": {"weight": 0.25, "description": "Clear, usable decision framework"},
+      "practical_wisdom": {"weight": 0.25, "description": "Based on real-world experience"},
+      "case_studies": {"weight": 0.20, "description": "Real examples with analysis"},
+      "anti_patterns": {"weight": 0.15, "description": "Common pitfalls identified"},
+      "actionability": {"weight": 0.15, "description": "Teams can use this to make decisions"}
+    }
+  },
+  {
+    "id": "research-medium-003",
+    "mode": "research",
+    "difficulty": "medium",
+    "title": "The Ethics of Data Collection in the AI Era",
+    "description": "Analyze the ethical implications of data collection practices for AI training.",
+    "content": "Write an in-depth analysis of data collection ethics in the AI era:\n\n1. **Current Landscape**: How companies collect and use data for AI training\n2. **Consent and Transparency**: Issues with terms of service, informed consent\n3. **Bias and Representation**: How data collection affects AI fairness\n4. **Privacy vs Innovation**: The tension between data needs and privacy rights\n5. **Regulatory Framework**: GDPR, CCPA, AI Act, and global approaches\n6. **Alternative Approaches**: Federated learning, differential privacy, synthetic data\n7. **Stakeholder Analysis**: Impact on individuals, companies, researchers, society\n8. **Recommendations**: For companies, regulators, and individuals\n\nInclude specific case studies (e.g., Clearview AI, LAION dataset, medical data sharing).",
+    "time_limit": 900,
+    "judge_criteria": ["ethical_reasoning_depth", "regulatory_knowledge", "case_study_quality", "balance", "recommendation_quality"],
+    "scoring_rubric": {
+      "ethics": {"weight": 0.25, "description": "Deep ethical analysis with multiple frameworks"},
+      "regulation": {"weight": 0.20, "description": "Accurate regulatory landscape"},
+      "cases": {"weight": 0.20, "description": "Specific real-world examples analyzed"},
+      "balance": {"weight": 0.20, "description": "Multiple perspectives represented"},
+      "recommendations": {"weight": 0.15, "description": "Practical, actionable recommendations"}
+    }
+  },
+  {
+    "id": "research-medium-004",
+    "mode": "research",
+    "difficulty": "medium",
+    "title": "Remote Work Technology Stack Analysis",
+    "description": "Evaluate and recommend a complete remote work technology stack.",
+    "content": "Analyze and recommend a comprehensive remote work technology stack for a 50-person engineering team. Cover:\n\n1. **Communication**: Sync (video/voice) vs async (messaging) tools comparison\n2. **Project Management**: Jira vs Linear vs Notion vs alternatives\n3. **Documentation**: Knowledge base tools, ADRs, runbooks\n4. **Development**: IDE, version control, CI/CD, code review\n5. **Collaboration**: Whiteboarding, pair programming, design tools\n6. **Security**: VPN, zero-trust, endpoint management\n7. **Culture & Social**: Virtual team building, watercooler tools\n8. **Integration & Automation**: How tools connect, reducing context switching\n\nFor each category, compare 3+ options with pros, cons, pricing, and recommendation.",
+    "time_limit": 900,
+    "judge_criteria": ["tool_evaluation_depth", "practical_experience", "cost_analysis", "integration_considerations", "recommendation_clarity"],
+    "scoring_rubric": {
+      "evaluation": {"weight": 0.25, "description": "Thorough comparison of real tools"},
+      "practical": {"weight": 0.25, "description": "Based on actual usage experience"},
+      "cost": {"weight": 0.20, "description": "Pricing analysis included"},
+      "integration": {"weight": 0.15, "description": "Tools work well together"},
+      "clarity": {"weight": 0.15, "description": "Clear recommendations with reasoning"}
+    }
+  },
+  {
+    "id": "research-medium-005",
+    "mode": "research",
+    "difficulty": "medium",
+    "title": "Electric Vehicles: Technology, Economics, and Environment",
+    "description": "Comprehensive analysis of the EV ecosystem including technology, economics, and environmental impact.",
+    "content": "Write a comprehensive analysis of the electric vehicle ecosystem:\n\n1. **Battery Technology**: Li-ion variants, solid-state prospects, recycling\n2. **Charging Infrastructure**: Levels, networks, charging curves, V2G\n3. **Total Cost of Ownership**: Purchase price, fuel, maintenance, depreciation\n4. **Environmental Impact**: Lifecycle analysis including manufacturing, grid mix\n5. **Grid Impact**: Demand management, renewable integration, storage\n6. **Market Analysis**: Adoption trends, key players, government policies\n7. **Barriers**: Range anxiety, charging speed, cold weather, towing\n8. **Future Outlook**: Autonomous EVs, shared mobility, hydrogen competition\n\nUse recent data and include regional comparisons (US, EU, China).",
+    "time_limit": 900,
+    "judge_criteria": ["data_quality", "technical_depth", "economic_analysis", "environmental_objectivity", "future_insights"],
+    "scoring_rubric": {
+      "data": {"weight": 0.25, "description": "Current, accurate data from reliable sources"},
+      "technical": {"weight": 0.25, "description": "Deep understanding of EV technology"},
+      "economic": {"weight": 0.20, "description": "Thorough cost and market analysis"},
+      "environmental": {"weight": 0.15, "description": "Objective lifecycle assessment"},
+      "insights": {"weight": 0.15, "description": "Well-reasoned future projections"}
+    }
+  },
+  {
+    "id": "research-medium-006",
+    "mode": "research",
+    "difficulty": "medium",
+    "title": "Open Source Software: Sustainability Crisis",
+    "description": "Analyze the sustainability challenges facing open source projects and propose solutions.",
+    "content": "Analyze the open source sustainability crisis:\n\n1. **The Problem**: Maintainer burnout, unfunded infrastructure, corporate free-riding\n2. **Case Studies**: Log4Shell, OpenSSL/Heartbleed, core-js, left-pad\n3. **Funding Models**: GitHub Sponsors, Open Collective, Tidelift, license changes\n4. **Corporate Responsibility**: How companies depend on and contribute to OSS\n5. **License Evolution**: From permissive to source-available (MongoDB, Elastic, HashiCorp)\n6. **Governance Models**: Foundations, BDFL, corporate stewardship\n7. **Metrics**: How to measure project health beyond GitHub stars\n8. **Proposals**: For maintainers, companies, governments, and foundations\n\nInclude interviews or statements from prominent maintainers if possible.",
+    "time_limit": 900,
+    "judge_criteria": ["problem_analysis_depth", "case_study_quality", "solution_viability", "stakeholder_perspective", "practical_recommendations"],
+    "scoring_rubric": {
+      "analysis": {"weight": 0.25, "description": "Deep understanding of the sustainability problem"},
+      "cases": {"weight": 0.25, "description": "Specific examples with detailed analysis"},
+      "solutions": {"weight": 0.20, "description": "Viable proposals for different stakeholders"},
+      "perspectives": {"weight": 0.15, "description": "Multiple viewpoints considered"},
+      "recommendations": {"weight": 0.15, "description": "Actionable proposals"}
+    }
+  },
+  {
+    "id": "research-hard-001",
+    "mode": "research",
+    "difficulty": "hard",
+    "title": "AI Alignment: Current Approaches and Open Problems",
+    "description": "Survey the AI alignment landscape, comparing technical and governance approaches.",
+    "content": "Write a comprehensive survey of AI alignment research:\n\n1. **Problem Framing**: Outer alignment, inner alignment, deceptive alignment\n2. **Technical Approaches**:\n   - RLHF and its limitations\n   - Constitutional AI (Anthropic's approach)\n   - Debate and recursive reward modeling\n   - Interpretability as a path to alignment\n   - Scalable oversight proposals\n3. **Governance Approaches**:\n   - Regulatory frameworks (EU AI Act, US executive orders)\n   - International coordination challenges\n   - Corporate self-governance effectiveness\n4. **Key Debates**:\n   - Capabilities vs alignment research prioritization\n   - Open source AI safety implications\n   - Timelines and urgency disagreements\n5. **Cross-Domain Insights**: Lessons from nuclear safety, biosecurity, aviation\n6. **Open Problems**: What we still don't know how to solve\n7. **Research Agenda**: Promising directions for future work\n\nReference key papers from MIRI, Anthropic, DeepMind, OpenAI safety teams.",
+    "time_limit": 1200,
+    "judge_criteria": ["technical_depth", "research_coverage", "balanced_perspectives", "cross_domain_synthesis", "original_insight"],
+    "scoring_rubric": {
+      "depth": {"weight": 0.25, "description": "Deep technical understanding of alignment research"},
+      "coverage": {"weight": 0.25, "description": "Comprehensive survey of major approaches"},
+      "balance": {"weight": 0.20, "description": "Fair treatment of different perspectives"},
+      "synthesis": {"weight": 0.15, "description": "Cross-domain insights and connections"},
+      "insight": {"weight": 0.15, "description": "Original analysis and perspectives"}
+    }
+  },
+  {
+    "id": "research-hard-002",
+    "mode": "research",
+    "difficulty": "hard",
+    "title": "Post-Quantum Cryptography Migration Strategy",
+    "description": "Develop a comprehensive strategy for migrating cryptographic systems to post-quantum algorithms.",
+    "content": "Create a comprehensive post-quantum cryptography migration strategy:\n\n1. **Threat Assessment**: Timeline for cryptographically relevant quantum computers\n2. **Vulnerable Systems**: RSA, ECC, Diffie-Hellman, and their quantum attack complexities\n3. **NIST PQC Standards**: ML-KEM, ML-DSA, SLH-DSA - analysis of each\n4. **Hybrid Approach**: Combining classical and PQC during transition\n5. **Migration Priorities**: Which systems to migrate first (data sensitivity, shelf life)\n6. **Implementation Challenges**: Key sizes, performance, protocol compatibility\n7. **Crypto Agility**: Designing systems for future algorithm changes\n8. **Industry Readiness**: Current vendor support, standards compliance\n9. **Cost Analysis**: Resources needed for migration at different scales\n10. **Timeline**: Phased migration plan for a large enterprise\n\nInclude specific recommendations for TLS, VPN, code signing, and data-at-rest encryption.",
+    "time_limit": 1200,
+    "judge_criteria": ["cryptographic_expertise", "practical_implementation", "risk_assessment", "timeline_realism", "specific_recommendations"],
+    "scoring_rubric": {
+      "expertise": {"weight": 0.25, "description": "Deep understanding of PQC landscape"},
+      "implementation": {"weight": 0.25, "description": "Practical, implementable strategy"},
+      "risk": {"weight": 0.20, "description": "Realistic threat and risk assessment"},
+      "timeline": {"weight": 0.15, "description": "Achievable migration schedule"},
+      "specifics": {"weight": 0.15, "description": "Specific to different use cases"}
+    }
+  },
+  {
+    "id": "research-hard-003",
+    "mode": "research",
+    "difficulty": "hard",
+    "title": "Neuroscience of Creativity: Implications for AI",
+    "description": "Synthesize neuroscience research on creativity and analyze implications for AI creative systems.",
+    "content": "Write a cross-disciplinary analysis connecting neuroscience of creativity to AI systems:\n\n1. **Neuroscience of Creativity**:\n   - Default mode network and creative ideation\n   - Prefrontal cortex role in creative evaluation\n   - Neurotransmitters and creative states\n   - Divergent vs convergent thinking neural substrates\n\n2. **Psychological Models**:\n   - Wallas's four stages (preparation, incubation, illumination, verification)\n   - Csikszentmihalyi's systems model\n   - Amabile's componential model\n\n3. **AI Creative Systems**:\n   - LLMs and creative writing\n   - Diffusion models and visual art\n   - Music generation systems\n   - Scientific discovery AI (AlphaFold, drug discovery)\n\n4. **Critical Analysis**:\n   - Where AI creativity diverges from human creativity\n   - Can AI have genuine insight vs pattern recombination?\n   - The role of embodiment and experience in creativity\n   - Implications for creative professions\n\n5. **Synthesis**: What neuroscience tells us about building more creative AI",
+    "time_limit": 1200,
+    "judge_criteria": ["neuroscience_accuracy", "ai_systems_knowledge", "cross_disciplinary_synthesis", "critical_analysis", "original_insight"],
+    "scoring_rubric": {
+      "neuroscience": {"weight": 0.25, "description": "Accurate neuroscience content"},
+      "ai_knowledge": {"weight": 0.20, "description": "Understanding of current AI creative systems"},
+      "synthesis": {"weight": 0.25, "description": "Genuine cross-disciplinary connections"},
+      "critical": {"weight": 0.15, "description": "Thoughtful critical analysis"},
+      "insight": {"weight": 0.15, "description": "Original perspectives and conclusions"}
+    }
+  },
+  {
+    "id": "research-hard-004",
+    "mode": "research",
+    "difficulty": "hard",
+    "title": "Geopolitics of Semiconductor Supply Chains",
+    "description": "Analyze the geopolitical implications of semiconductor supply chain concentration.",
+    "content": "Analyze the geopolitics of semiconductor manufacturing:\n\n1. **Supply Chain Map**: Where chips are designed, fabricated, packaged\n2. **Concentration Risk**: TSMC dominance, ASML monopoly, rare earth dependencies\n3. **US CHIPS Act**: Goals, implementation, effectiveness assessment\n4. **China's Strategy**: SMIC progress, indigenous development, chip restrictions impact\n5. **EU Chips Act**: European ambitions and challenges\n6. **Japan and South Korea**: Reshoring efforts and historical position\n7. **Taiwan Factor**: Geopolitical risks of concentration on Taiwan\n8. **Technology Controls**: Export restrictions effectiveness and consequences\n9. **Economic Analysis**: Cost of reshoring vs efficiency of specialization\n10. **Future Scenarios**: Decoupling, diversification, or continued globalization\n\nInclude analysis of impact on AI development, given the importance of advanced GPUs.",
+    "time_limit": 1200,
+    "judge_criteria": ["geopolitical_understanding", "supply_chain_analysis", "economic_reasoning", "scenario_quality", "current_data"],
+    "scoring_rubric": {
+      "geopolitics": {"weight": 0.25, "description": "Deep understanding of geopolitical dynamics"},
+      "supply_chain": {"weight": 0.25, "description": "Accurate supply chain mapping and analysis"},
+      "economic": {"weight": 0.20, "description": "Sound economic reasoning"},
+      "scenarios": {"weight": 0.15, "description": "Well-reasoned future scenarios"},
+      "data": {"weight": 0.15, "description": "Current, accurate data points"}
+    }
+  },
+  {
+    "id": "research-expert-001",
+    "mode": "research",
+    "difficulty": "expert",
+    "title": "Formal Verification of Neural Networks",
+    "description": "Survey formal verification approaches for neural network properties.",
+    "content": "Write an academic survey of formal verification methods for neural networks:\n\n1. **Motivation**: Why formal verification matters for safety-critical AI\n2. **Problem Formalization**: Specification of neural network properties\n   - Robustness specifications (adversarial robustness bounds)\n   - Functional specifications (monotonicity, fairness constraints)\n   - Reachability specifications\n\n3. **Verification Approaches**:\n   - SMT-based methods (Marabou, Reluplex)\n   - Abstract interpretation (AI^2, DeepPoly)\n   - Linear relaxation (Fast-Lin, CROWN)\n   - Mixed-integer programming\n   - Sampling-based statistical verification\n\n4. **Scalability Challenges**: Curse of dimensionality, network size limits\n5. **Certification vs Verification**: Practical certification frameworks\n6. **Connections to Adversarial ML**: Verification as defense against attacks\n7. **Industry Applications**: Autonomous driving, medical devices, aerospace\n8. **Open Problems**: Scalability, compositional verification, training-integrated verification\n\nCompare the soundness, completeness, and scalability trade-offs of each approach. Reference at least 10 key papers from the field.",
+    "time_limit": 1800,
+    "judge_criteria": ["technical_depth", "paper_coverage", "mathematical_rigor", "comparison_quality", "open_problem_identification"],
+    "scoring_rubric": {
+      "depth": {"weight": 0.30, "description": "Deep technical understanding of verification methods"},
+      "coverage": {"weight": 0.25, "description": "Comprehensive survey of the field"},
+      "rigor": {"weight": 0.20, "description": "Mathematically precise descriptions"},
+      "comparison": {"weight": 0.15, "description": "Fair, detailed comparison of approaches"},
+      "problems": {"weight": 0.10, "description": "Well-identified open research questions"}
+    }
+  },
+  {
+    "id": "research-expert-002",
+    "mode": "research",
+    "difficulty": "expert",
+    "title": "Mechanistic Interpretability: Current State and Frontiers",
+    "description": "Survey mechanistic interpretability research in deep learning.",
+    "content": "Write a comprehensive survey of mechanistic interpretability:\n\n1. **Motivation**: Why understanding internal representations matters\n2. **Foundations**:\n   - Circuits and features in neural networks\n   - Superposition hypothesis\n   - Polysemanticity and monosemanticity\n\n3. **Key Techniques**:\n   - Activation patching and causal tracing\n   - Sparse autoencoders for feature extraction\n   - Probing classifiers and linear representations\n   - Mechanistic interpretability of attention heads\n   - Circuit analysis methodology\n\n4. **Case Studies**:\n   - Induction heads in transformers\n   - Indirect object identification circuit\n   - Greater-than circuit in GPT-2\n   - Modular arithmetic in small transformers\n   - Representation engineering (RepE)\n\n5. **Tools and Infrastructure**: TransformerLens, Anthropic's tools, Neel Nanda's work\n6. **Scalability Challenges**: Moving from toy models to production LLMs\n7. **Connections to Alignment**: How interpretability enables safety\n8. **Critique**: Limitations and alternative viewpoints\n9. **Research Frontiers**: Most promising directions\n\nReference at least 15 key papers. Include mathematical notation where appropriate.",
+    "time_limit": 1800,
+    "judge_criteria": ["technical_depth", "research_coverage", "case_study_detail", "mathematical_rigor", "frontier_analysis"],
+    "scoring_rubric": {
+      "depth": {"weight": 0.30, "description": "Deep understanding of MI techniques"},
+      "coverage": {"weight": 0.25, "description": "Comprehensive survey of the field"},
+      "cases": {"weight": 0.20, "description": "Detailed case study analysis"},
+      "rigor": {"weight": 0.15, "description": "Mathematical precision where needed"},
+      "frontiers": {"weight": 0.10, "description": "Well-identified research directions"}
+    }
+  },
+  {
+    "id": "research-expert-003",
+    "mode": "research",
+    "difficulty": "expert",
+    "title": "CRISPR Gene Editing: From Lab to Clinic",
+    "description": "Analyze the translational pipeline of CRISPR technology from research to clinical applications.",
+    "content": "Write a comprehensive analysis of CRISPR's translational pipeline:\n\n1. **Molecular Mechanisms**: Cas9, Cas12, Cas13, base editors, prime editors\n2. **Delivery Systems**: AAV, LNP, RNP, electroporation - comparing tropism and efficiency\n3. **In Vivo Applications**: Sickle cell (Casgevy), transthyretin amyloidosis, CAR-T\n4. **Ex Vivo Applications**: Hematopoietic stem cell editing, T-cell engineering\n5. **Off-Target Analysis**: GUIDE-seq, CIRCLE-seq, computational prediction\n6. **Regulatory Landscape**: FDA, EMA pathways; approval precedents\n7. **Ethical Considerations**: Germline editing, access equity, enhancement vs therapy\n8. **Manufacturing Challenges**: GMP production, quality control, cost\n9. **Competing Technologies**: Base editing, prime editing, RNA editing, epigenome editing\n10. **Future Frontiers**: In vivo CAR-T, organ transplantation, aging\n\nInclude analysis of at least 5 ongoing clinical trials with their mechanisms and status.",
+    "time_limit": 1800,
+    "judge_criteria": ["molecular_biology_accuracy", "clinical_pipeline_knowledge", "regulatory_understanding", "ethical_analysis", "current_data"],
+    "scoring_rubric": {
+      "biology": {"weight": 0.25, "description": "Accurate molecular biology content"},
+      "clinical": {"weight": 0.25, "description": "Detailed clinical pipeline analysis"},
+      "regulatory": {"weight": 0.20, "description": "Accurate regulatory landscape"},
+      "ethics": {"weight": 0.15, "description": "Nuanced ethical analysis"},
+      "currency": {"weight": 0.15, "description": "Current clinical trial data"}
+    }
+  },
+  {
+    "id": "research-expert-004",
+    "mode": "research",
+    "difficulty": "expert",
+    "title": "Federated Learning: Theory, Systems, and Privacy",
+    "description": "Comprehensive analysis of federated learning covering theory, systems challenges, and privacy guarantees.",
+    "content": "Write a comprehensive analysis of federated learning (FL):\n\n1. **Theoretical Foundations**:\n   - FedAvg and convergence guarantees\n   - Non-IID data challenges and solutions\n   - Communication efficiency (compression, quantization)\n   - Personalization approaches (per-FINETUNING, meta-learning)\n\n2. **Systems Challenges**:\n   - Stragglers and asynchronous FL\n   - Scalability to millions of devices\n   - Resource heterogeneity\n   - Systems like FATE, PySyft, TensorFlow Federated\n\n3. **Privacy and Security**:\n   - Differential privacy in FL (local vs central DP)\n   - Secure aggregation protocols\n   - Byzantine-resilient aggregation\n   - Privacy attacks: membership inference, gradient inversion, model extraction\n   - Trusted execution environments\n\n4. **Applications**:\n   - Healthcare (multi-hospital studies)\n   - Mobile keyboard prediction\n   - Financial fraud detection\n   - Autonomous driving data sharing\n\n5. **Open Problems**: Heterogeneity, fairness, incentive mechanisms, verifiability\n\nInclude pseudocode for key algorithms and reference at least 15 papers.",
+    "time_limit": 1800,
+    "judge_criteria": ["theoretical_depth", "systems_understanding", "privacy_analysis", "application_coverage", "mathematical_rigor"],
+    "scoring_rubric": {
+      "theory": {"weight": 0.25, "description": "Deep theoretical understanding with proofs"},
+      "systems": {"weight": 0.25, "description": "Practical systems knowledge"},
+      "privacy": {"weight": 0.20, "description": "Thorough privacy and security analysis"},
+      "applications": {"weight": 0.15, "description": "Real-world application analysis"},
+      "rigor": {"weight": 0.15, "description": "Mathematical precision and pseudocode"}
+    }
+  }
+]
