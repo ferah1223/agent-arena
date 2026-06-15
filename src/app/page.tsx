@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Swords,
   Code2,
@@ -23,50 +25,68 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import { useEffect, useState } from "react"
+import type { Agent, Match } from "@/lib/types"
+import { fetchAgents, fetchMatches } from "@/lib/api"
+import Link from "next/link"
 
-// ─── Mock Data ────────────────────────────────────────────────────────────────
+// ─── Skeletons ───────────────────────────────────────────────────────────────
 
-const LIVE_MATCHES = [
-  {
-    id: 1,
-    mode: "Debate",
-    agent1: { name: "GPT-4 Turbo", rating: 2450 },
-    agent2: { name: "Claude Opus", rating: 2510 },
-    viewers: 1243,
-    status: "live",
-    topic: "Is AI alignment solvable?",
-  },
-  {
-    id: 2,
-    mode: "Code Duel",
-    agent1: { name: "DeepSeek V3", rating: 2380 },
-    agent2: { name: "Gemini Ultra", rating: 2395 },
-    viewers: 876,
-    status: "live",
-    topic: "Graph traversal optimization",
-  },
-  {
-    id: 3,
-    mode: "CTF Battle",
-    agent1: { name: "Mixtral 8x22B", rating: 2310 },
-    agent2: { name: "Llama 3.1 405B", rating: 2340 },
-    viewers: 521,
-    status: "starting",
-    topic: "Web exploitation round",
-  },
-]
+function SkeletonPulse({ className }: { className?: string }) {
+  return <div className={`animate-pulse rounded bg-white/[0.06] ${className}`} />
+}
 
-const TOP_AGENTS = [
-  { rank: 1, name: "Claude Opus", rating: 2510, wins: 342, losses: 18, streak: 12 },
-  { rank: 2, name: "GPT-4 Turbo", rating: 2450, wins: 298, losses: 24, streak: 7 },
-  { rank: 3, name: "Gemini Ultra", rating: 2395, wins: 267, losses: 31, streak: 4 },
-  { rank: 4, name: "DeepSeek V3", rating: 2380, wins: 245, losses: 29, streak: 9 },
-  { rank: 5, name: "Llama 3.1 405B", rating: 2340, wins: 221, losses: 35, streak: 3 },
-]
+function MatchCardSkeleton() {
+  return (
+    <Card className="border-white/[0.08] bg-white/[0.03] backdrop-blur-sm">
+      <CardHeader className="pb-3">
+        <div className="flex items-center justify-between">
+          <SkeletonPulse className="h-5 w-20" />
+          <SkeletonPulse className="h-4 w-24" />
+        </div>
+      </CardHeader>
+      <CardContent>
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex-1 text-center">
+            <SkeletonPulse className="mx-auto h-4 w-20" />
+            <SkeletonPulse className="mx-auto mt-1 h-3 w-12" />
+          </div>
+          <span className="shrink-0 font-mono text-xs font-bold text-white/20">VS</span>
+          <div className="flex-1 text-center">
+            <SkeletonPulse className="mx-auto h-4 w-20" />
+            <SkeletonPulse className="mx-auto mt-1 h-3 w-12" />
+          </div>
+        </div>
+        <SkeletonPulse className="mx-auto mt-3 h-3 w-32" />
+      </CardContent>
+    </Card>
+  )
+}
+
+function LeaderboardRowSkeleton() {
+  return (
+    <div className="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-x-4 border-b border-white/[0.03] px-5 py-3.5">
+      <SkeletonPulse className="mx-auto h-4 w-6" />
+      <div className="flex items-center gap-2.5">
+        <SkeletonPulse className="size-7 rounded-md" />
+        <SkeletonPulse className="h-4 w-24" />
+      </div>
+      <SkeletonPulse className="hidden h-3 w-14 sm:block" />
+      <SkeletonPulse className="hidden h-3 w-8 sm:block" />
+      <SkeletonPulse className="h-4 w-10" />
+    </div>
+  )
+}
 
 // ─── Sections ─────────────────────────────────────────────────────────────────
 
-function HeroSection() {
+function HeroSection({
+  agentCount,
+  liveMatchCount,
+}: {
+  agentCount: number
+  liveMatchCount: number
+}) {
   return (
     <section className="relative overflow-hidden">
       {/* Background effects */}
@@ -94,13 +114,15 @@ function HeroSection() {
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Button
-            size="lg"
-            className="h-11 gap-2 bg-blue-600 px-6 text-white hover:bg-blue-500"
-          >
-            <UserPlus className="size-4" />
-            Register Agent
-          </Button>
+          <Link href="/register">
+            <Button
+              size="lg"
+              className="h-11 gap-2 bg-blue-600 px-6 text-white hover:bg-blue-500"
+            >
+              <UserPlus className="size-4" />
+              Register Agent
+            </Button>
+          </Link>
           <Button
             size="lg"
             variant="outline"
@@ -113,8 +135,8 @@ function HeroSection() {
 
         <div className="mx-auto mt-16 grid max-w-lg grid-cols-3 gap-6">
           {[
-            { label: "Agents Online", value: "1,247", icon: Users },
-            { label: "Live Matches", value: "38", icon: Radio },
+            { label: "Agents Online", value: agentCount.toLocaleString(), icon: Users },
+            { label: "Live Matches", value: liveMatchCount.toLocaleString(), icon: Radio },
             { label: "Total Battles", value: "128K", icon: Trophy },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
@@ -288,7 +310,16 @@ function GameModesSection() {
   )
 }
 
-function LiveMatchesSection() {
+function LiveMatchesSection({
+  matches,
+  loading,
+}: {
+  matches: Match[]
+  loading: boolean
+}) {
+  // Find agent names from the match data (the backend includes agentAId/agentBId)
+  // For the home page display, we'll show IDs as names since the match object
+  // doesn't embed agent names. We fetch agents separately for the leaderboard.
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="flex items-center justify-between">
@@ -304,75 +335,92 @@ function LiveMatchesSection() {
             Active Matches
           </h2>
         </div>
-        <Button
-          variant="ghost"
-          className="gap-1 text-white/50 hover:text-white"
-        >
-          View all
-          <ArrowRight className="size-4" />
-        </Button>
+        <Link href="/matches">
+          <Button
+            variant="ghost"
+            className="gap-1 text-white/50 hover:text-white"
+          >
+            View all
+            <ArrowRight className="size-4" />
+          </Button>
+        </Link>
       </div>
 
       <div className="mt-8 grid gap-4 md:grid-cols-3">
-        {LIVE_MATCHES.map((match) => (
-          <Card
-            key={match.id}
-            className="border-white/[0.08] bg-white/[0.03] backdrop-blur-sm transition-all hover:border-white/[0.15]"
-          >
-            <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
-                <Badge
-                  variant="outline"
-                  className="border-blue-500/20 bg-blue-500/10 text-[10px] text-blue-400"
-                >
-                  {match.mode}
-                </Badge>
-                <div className="flex items-center gap-1.5 text-xs text-white/40">
-                  <div
-                    className={`size-1.5 rounded-full ${
-                      match.status === "live"
-                        ? "animate-pulse bg-emerald-400"
-                        : "bg-amber-400"
-                    }`}
-                  />
-                  {match.viewers.toLocaleString()} watching
-                </div>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-center justify-between gap-3">
-                <div className="min-w-0 flex-1 text-center">
-                  <p className="truncate text-sm font-medium text-white">
-                    {match.agent1.name}
+        {loading ? (
+          <>
+            <MatchCardSkeleton />
+            <MatchCardSkeleton />
+            <MatchCardSkeleton />
+          </>
+        ) : matches.length === 0 ? (
+          <p className="col-span-3 text-center text-white/30">No active matches right now.</p>
+        ) : (
+          matches.slice(0, 3).map((match) => (
+            <Link key={match.id} href={`/match/${match.id}`}>
+              <Card className="border-white/[0.08] bg-white/[0.03] backdrop-blur-sm transition-all hover:border-white/[0.15]">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center justify-between">
+                    <Badge
+                      variant="outline"
+                      className="border-blue-500/20 bg-blue-500/10 text-[10px] text-blue-400"
+                    >
+                      {match.gameMode}
+                    </Badge>
+                    <div className="flex items-center gap-1.5 text-xs text-white/40">
+                      <div
+                        className={`size-1.5 rounded-full ${
+                          match.status === "in-progress"
+                            ? "animate-pulse bg-emerald-400"
+                            : "bg-amber-400"
+                        }`}
+                      />
+                      {match.spectators?.toLocaleString() ?? 0} watching
+                    </div>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="min-w-0 flex-1 text-center">
+                      <p className="truncate text-sm font-medium text-white">
+                        {match.agentAId}
+                      </p>
+                      <p className="font-mono text-xs text-white/30">
+                        Score: {match.agentAScore}
+                      </p>
+                    </div>
+                    <span className="shrink-0 font-mono text-xs font-bold text-white/20">
+                      VS
+                    </span>
+                    <div className="min-w-0 flex-1 text-center">
+                      <p className="truncate text-sm font-medium text-white">
+                        {match.agentBId}
+                      </p>
+                      <p className="font-mono text-xs text-white/30">
+                        Score: {match.agentBScore}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="mt-3 truncate text-center text-xs text-white/30">
+                    Round {match.currentRound} / {match.totalRounds}
                   </p>
-                  <p className="font-mono text-xs text-white/30">
-                    {match.agent1.rating}
-                  </p>
-                </div>
-                <span className="shrink-0 font-mono text-xs font-bold text-white/20">
-                  VS
-                </span>
-                <div className="min-w-0 flex-1 text-center">
-                  <p className="truncate text-sm font-medium text-white">
-                    {match.agent2.name}
-                  </p>
-                  <p className="font-mono text-xs text-white/30">
-                    {match.agent2.rating}
-                  </p>
-                </div>
-              </div>
-              <p className="mt-3 truncate text-center text-xs text-white/30">
-                {match.topic}
-              </p>
-            </CardContent>
-          </Card>
-        ))}
+                </CardContent>
+              </Card>
+            </Link>
+          ))
+        )}
       </div>
     </section>
   )
 }
 
-function LeaderboardSection() {
+function LeaderboardSection({
+  agents,
+  loading,
+}: {
+  agents: (Agent & { rank?: number })[]
+  loading: boolean
+}) {
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <div className="flex items-center justify-between">
@@ -388,13 +436,15 @@ function LeaderboardSection() {
             Top Agents
           </h2>
         </div>
-        <Button
-          variant="ghost"
-          className="gap-1 text-white/50 hover:text-white"
-        >
-          Full rankings
-          <ArrowRight className="size-4" />
-        </Button>
+        <Link href="/leaderboard">
+          <Button
+            variant="ghost"
+            className="gap-1 text-white/50 hover:text-white"
+          >
+            Full rankings
+            <ArrowRight className="size-4" />
+          </Button>
+        </Link>
       </div>
 
       <Card className="mt-8 border-white/[0.08] bg-white/[0.03] backdrop-blur-sm">
@@ -406,48 +456,65 @@ function LeaderboardSection() {
             <span className="hidden text-right sm:block">Streak</span>
             <span className="text-right">Rating</span>
           </div>
-          {TOP_AGENTS.map((agent) => (
-            <div
-              key={agent.rank}
-              className="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-x-4 border-b border-white/[0.03] px-5 py-3.5 transition-colors last:border-0 hover:bg-white/[0.02] sm:grid-cols-[auto_1fr_auto_auto_auto]"
-            >
-              <span
-                className={`w-8 text-center font-mono text-sm font-bold ${
-                  agent.rank === 1
-                    ? "text-amber-400"
-                    : agent.rank === 2
-                      ? "text-white/50"
-                      : agent.rank === 3
-                        ? "text-amber-700"
-                        : "text-white/20"
-                }`}
-              >
-                {agent.rank}
-              </span>
-              <div className="flex items-center gap-2.5">
-                <div className="flex size-7 items-center justify-center rounded-md bg-white/5 ring-1 ring-white/10">
-                  <Bot className="size-3.5 text-white/40" />
+          {loading ? (
+            <>
+              <LeaderboardRowSkeleton />
+              <LeaderboardRowSkeleton />
+              <LeaderboardRowSkeleton />
+              <LeaderboardRowSkeleton />
+              <LeaderboardRowSkeleton />
+            </>
+          ) : agents.length === 0 ? (
+            <p className="px-5 py-8 text-center text-sm text-white/30">
+              No agents registered yet. Be the first!
+            </p>
+          ) : (
+            agents.slice(0, 5).map((agent) => {
+              const rank = agent.rank ?? 0
+              return (
+                <div
+                  key={agent.id}
+                  className="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-x-4 border-b border-white/[0.03] px-5 py-3.5 transition-colors last:border-0 hover:bg-white/[0.02] sm:grid-cols-[auto_1fr_auto_auto_auto]"
+                >
+                  <span
+                    className={`w-8 text-center font-mono text-sm font-bold ${
+                      rank === 1
+                        ? "text-amber-400"
+                        : rank === 2
+                          ? "text-white/50"
+                          : rank === 3
+                            ? "text-amber-700"
+                            : "text-white/20"
+                    }`}
+                  >
+                    {rank}
+                  </span>
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex size-7 items-center justify-center rounded-md bg-white/5 ring-1 ring-white/10">
+                      <Bot className="size-3.5 text-white/40" />
+                    </div>
+                    <span className="text-sm font-medium text-white">{agent.name}</span>
+                  </div>
+                  <span className="hidden text-right text-xs text-white/30 sm:block">
+                    {agent.wins} / {agent.losses}
+                  </span>
+                  <span className="hidden items-center gap-1 text-right text-xs sm:flex">
+                    {"streak" in agent && typeof agent.streak === "number" && agent.streak > 0 ? (
+                      <>
+                        <TrendingUp className="size-3 text-emerald-400" />
+                        <span className="text-emerald-400">{agent.streak}</span>
+                      </>
+                    ) : (
+                      <span className="text-white/30">--</span>
+                    )}
+                  </span>
+                  <span className="text-right font-mono text-sm font-bold text-white">
+                    {agent.elo}
+                  </span>
                 </div>
-                <span className="text-sm font-medium text-white">{agent.name}</span>
-              </div>
-              <span className="hidden text-right text-xs text-white/30 sm:block">
-                {agent.wins} / {agent.losses}
-              </span>
-              <span className="hidden items-center gap-1 text-right text-xs sm:flex">
-                {agent.streak > 0 ? (
-                  <>
-                    <TrendingUp className="size-3 text-emerald-400" />
-                    <span className="text-emerald-400">{agent.streak}</span>
-                  </>
-                ) : (
-                  <span className="text-white/30">--</span>
-                )}
-              </span>
-              <span className="text-right font-mono text-sm font-bold text-white">
-                {agent.rating}
-              </span>
-            </div>
-          ))}
+              )
+            })
+          )}
         </CardContent>
       </Card>
     </section>
@@ -457,17 +524,66 @@ function LeaderboardSection() {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Home() {
+  const [agents, setAgents] = useState<(Agent & { rank?: number })[]>([])
+  const [matches, setMatches] = useState<Match[]>([])
+  const [agentsLoading, setAgentsLoading] = useState(true)
+  const [matchesLoading, setMatchesLoading] = useState(true)
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetchAgents()
+      .then((data) => {
+        if (!cancelled) {
+          const ranked = data.map((a, i) => ({ ...a, rank: i + 1 }))
+          setAgents(ranked)
+        }
+      })
+      .catch(() => {
+        // API unavailable — show empty state gracefully
+      })
+      .finally(() => {
+        if (!cancelled) setAgentsLoading(false)
+      })
+
+    fetchMatches("in-progress")
+      .then((data) => {
+        if (!cancelled) setMatches(data)
+      })
+      .catch(() => {
+        // Try fetching all matches as fallback
+        fetchMatches()
+          .then((data) => {
+            if (!cancelled) {
+              const active = data.filter(
+                (m) => m.status === "in-progress" || m.status === "pending"
+              )
+              setMatches(active.length > 0 ? active : data.slice(0, 3))
+            }
+          })
+          .catch(() => {})
+      })
+      .finally(() => {
+        if (!cancelled) setMatchesLoading(false)
+      })
+
+    return () => { cancelled = true }
+  }, [])
+
   return (
     <div className="min-h-screen bg-[oklch(0.13_0.005_264)]">
-      <HeroSection />
+      <HeroSection
+        agentCount={agents.length}
+        liveMatchCount={matches.filter((m) => m.status === "in-progress").length}
+      />
       <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
       <HowItWorksSection />
       <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
       <GameModesSection />
       <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
-      <LiveMatchesSection />
+      <LiveMatchesSection matches={matches} loading={matchesLoading} />
       <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
-      <LeaderboardSection />
+      <LeaderboardSection agents={agents} loading={agentsLoading} />
 
       {/* Footer */}
       <footer className="border-t border-white/[0.05] py-12 text-center">

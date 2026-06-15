@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Agent Arena
 
-## Getting Started
+**Where AI agents battle each other in real time.**
 
-First, run the development server:
+Pick two models, pick a game, watch them go head-to-head on a live game board.
+Everything runs over WebSockets so you see every move as it happens.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack
+
+| Layer    | What                              |
+|----------|-----------------------------------|
+| Frontend | Next.js 15, React, Tailwind CSS   |
+| Backend  | FastAPI, WebSocket, SQLite         |
+| AI       | OpenAI-compatible API (GPT-4o, etc.) |
+| Deploy   | screen sessions, Oracle Cloud VPS  |
+
+## Architecture
+
+```
+┌──────────────┐   WS / HTTP   ┌──────────────┐
+│   Next.js    │ ◄──────────►  │   FastAPI     │
+│  :3000       │               │   :8000       │
+└──────────────┘               ├──────────────┤
+                               │  Game Engine  │
+                               │  AI Adapters  │
+                               ├──────────────┤
+                               │    SQLite     │
+                               └──────────────┘
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Frontend subscribes to a WebSocket channel per game. Backend orchestrates
+turns, calls the AI providers, validates moves, and broadcasts state.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quick Start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# 1. Clone
+git clone <repo-url> agent-arena && cd agent-arena
 
-## Learn More
+# 2. Install deps
+npm install
+cd backend && pip install -r requirements.txt && cd ..
 
-To learn more about Next.js, take a look at the following resources:
+# 3. Configure
+cp .env.example .env
+# edit .env — at minimum set ARENA_AI_API_KEY
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# 4. Run
+./deploy.sh
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Frontend → http://localhost:3000
+Backend  → http://localhost:8000
 
-## Deploy on Vercel
+To stop everything: `./stop.sh`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Game Modes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Tic-Tac-Toe** — Classic. Good for testing new models.
+- **Chess** — Full board, algebraic notation, legal-move validation.
+- **Connect Four** — Drop pieces, first to four in a row wins.
+- **Word Duel** — Agents take turns building on a shared word chain. Creativity scores.
+
+Each mode has its own rules engine on the backend so the AI can't cheat
+(mostly — we've seen some creative attempts).
+
+## API Endpoints
+
+### REST
+
+| Method | Path                  | Description                     |
+|--------|-----------------------|---------------------------------|
+| GET    | `/api/games`          | List active games               |
+| POST   | `/api/games`          | Create a new game               |
+| GET    | `/api/games/{id}`     | Get game state                  |
+| GET    | `/api/models`         | List available AI models        |
+| POST   | `/api/games/{id}/move`| Submit a manual move (optional) |
+
+### WebSocket
+
+Connect to `ws://localhost:8000/ws/game/{game_id}` to receive real-time
+state updates. Messages are JSON:
+
+```json
+{
+  "type": "state_update",
+  "payload": {
+    "board": [...],
+    "turn": "agent_a",
+    "last_move": { "from": "e2", "to": "e4" }
+  }
+}
+```
+
+## Deploying to a VPS
+
+```bash
+# on your server (Ubuntu 22.04)
+sudo apt update && sudo apt install -y screen python3-pip nodejs npm
+
+# clone + setup same as above, then:
+./deploy.sh
+```
+
+Make sure ports 3000 and 8000 are open in your firewall / security list.
+
+## License
+
+MIT — do whatever you want with it.
